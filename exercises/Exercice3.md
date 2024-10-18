@@ -23,3 +23,44 @@ Use your rule with different projects and describe you findings below. See the [
 
 ## Answer
 
+Afin de tester notre règle nous avons ecrit le bout de programme suivant:
+
+public class Main{
+
+    public static void main(String[] args){
+
+        int bill;
+
+        if (True) {
+            if (True) {
+                if (True) {
+                    System.out.println("Hello toi");
+                }
+            }
+
+        }
+
+        if (True) {
+            if (True) 
+                for (int i = 0; i<2; i++){
+
+                    if (True) {
+                        System.out.println("Hello toi");
+                    }
+                }
+            }
+
+        if (True){
+
+            if (True){
+                break;
+            }
+        }
+    }
+}
+
+En écrivant la règle "//IfStatement//Block[IfStatement//Block[IfStatement//Block]]", les lignes 34-41 sont recoonu ainsi que les lignes 44-51. Cela comprend plus de choses que ce qui nous interesse. On souhaiterais seulement detecter les lignes 36-38 et 47-49, c'est à dire les troisièmes "if" imbriqués.
+Avec la règle "//IfStatement//IfStatement//IfStatement" on obtient bien ce que l'on souhaite.
+
+USAGE DE NOTRE REGLE SUR UN PROJET:
+
