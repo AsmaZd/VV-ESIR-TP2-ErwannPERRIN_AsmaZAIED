@@ -1,0 +1,2287 @@
+Classe: AnnotationUtils
+Package: org.apache.commons.lang3.AnnotationUtils
+     attributs privés sans getter: [TO_STRING_STYLE = new ToStringStyle() {
+
+    /**
+     * Serialization version
+     */
+    private static final long serialVersionUID = 1L;
+
+    {
+        setDefaultFullDetail(true);
+        setArrayContentDetail(true);
+        setUseClassName(true);
+        setUseShortClassName(true);
+        setUseIdentityHashCode(false);
+        setContentStart("(");
+        setContentEnd(")");
+        setFieldSeparator(", ");
+        setArrayStart("");
+        setArrayEnd("");
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void appendDetail(final StringBuffer buffer, final String fieldName, Object value) {
+        if (value instanceof Annotation) {
+            value = AnnotationUtils.toString((Annotation) value);
+        }
+        super.appendDetail(buffer, fieldName, value);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String getShortClassName(final Class<?> cls) {
+        // formatter:off
+        return ClassUtils.getAllInterfaces(cls).stream().filter(Annotation.class::isAssignableFrom).findFirst().map(iface -> "@" + iface.getName()).orElse(StringUtils.EMPTY);
+    // formatter:on
+    }
+}]
+
+Classe: AppendableJoiner
+Package: org.apache.commons.lang3.AppendableJoiner
+     attributs privés sans getter: [appender, delimiter, suffix, prefix]
+
+Classe: Processor
+Package: org.apache.commons.lang3.arch.Processor
+     attributs privés sans getter: [type, arch]
+
+Classe: ArchUtils
+Package: org.apache.commons.lang3.ArchUtils
+     attributs privés sans getter: [ARCH_TO_PROCESSOR]
+
+Classe: ArrayFill
+Package: org.apache.commons.lang3.ArrayFill
+     attributs privés sans getter: []
+
+Classe: ArraySorter
+Package: org.apache.commons.lang3.ArraySorter
+     attributs privés sans getter: []
+
+Classe: ArrayUtils
+Package: org.apache.commons.lang3.ArrayUtils
+     attributs privés sans getter: []
+
+Classe: BitField
+Package: org.apache.commons.lang3.BitField
+     attributs privés sans getter: [shiftCount, mask]
+
+Classe: BooleanUtils
+Package: org.apache.commons.lang3.BooleanUtils
+     attributs privés sans getter: [BOOLEAN_LIST = Collections.unmodifiableList(Arrays.asList(Boolean.FALSE, Boolean.TRUE))]
+
+Classe: AbstractSupplier
+Package: org.apache.commons.lang3.builder.AbstractSupplier
+     attributs privés sans getter: []
+
+Classe: Builder
+Package: org.apache.commons.lang3.builder.Builder
+     attributs privés sans getter: []
+
+Classe: CompareToBuilder
+Package: org.apache.commons.lang3.builder.CompareToBuilder
+     attributs privés sans getter: [comparison]
+
+Classe: Diff
+Package: org.apache.commons.lang3.builder.Diff
+     attributs privés sans getter: [fieldName, type, serialVersionUID = 1L]
+
+Classe: Diffable
+Package: org.apache.commons.lang3.builder.Diffable
+     attributs privés sans getter: []
+
+Classe: DiffBuilder
+Package: org.apache.commons.lang3.builder.DiffBuilder
+     attributs privés sans getter: [toStringFormat, style, right, left, equals, diffs, TO_STRING_FORMAT = "%s differs from %s"]
+
+Classe: DiffResult
+Package: org.apache.commons.lang3.builder.DiffResult
+     attributs privés sans getter: [toStringFormat, style, rhs, lhs, diffList]
+
+Classe: EqualsBuilder
+Package: org.apache.commons.lang3.builder.EqualsBuilder
+     attributs privés sans getter: [excludeFields, reflectUpToClass, bypassReflectionClasses, testRecursive, testTransients, isEquals = true, REGISTRY = ThreadLocal.withInitial(HashSet::new)]
+
+Classe: HashCodeBuilder
+Package: org.apache.commons.lang3.builder.HashCodeBuilder
+     attributs privés sans getter: [iTotal, iConstant, REGISTRY = ThreadLocal.withInitial(HashSet::new), DEFAULT_MULTIPLIER_VALUE = 37, DEFAULT_INITIAL_VALUE = 17]
+
+Classe: MultilineRecursiveToStringStyle
+Package: org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle
+     attributs privés sans getter: [spaces = 2, INDENT = 2, serialVersionUID = 1L]
+
+Classe: RecursiveToStringStyle
+Package: org.apache.commons.lang3.builder.RecursiveToStringStyle
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: ReflectionDiffBuilder
+Package: org.apache.commons.lang3.builder.ReflectionDiffBuilder
+     attributs privés sans getter: [excludeFieldNames, diffBuilder]
+
+Classe: ReflectionToStringBuilder
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilder
+     attributs privés sans getter: [upToClass, includeFieldNames, excludeFieldNames, excludeNullValues, appendTransients, appendStatics]
+
+Classe: StandardToStringStyle
+Package: org.apache.commons.lang3.builder.StandardToStringStyle
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: ToStringBuilder
+Package: org.apache.commons.lang3.builder.ToStringBuilder
+     attributs privés sans getter: [style, object, buffer, defaultStyle = ToStringStyle.DEFAULT_STYLE]
+
+Classe: ToStringStyle
+Package: org.apache.commons.lang3.builder.ToStringStyle
+     attributs privés sans getter: [summaryObjectEndText = ">", summaryObjectStartText = "<", sizeEndText = ">", sizeStartText = "<size=", nullText = "<null>", defaultFullDetail = true, arrayEnd = "}", arrayContentDetail = true, arraySeparator = ",", arrayStart = "{", fieldSeparator = ",", fieldSeparatorAtEnd, fieldSeparatorAtStart, fieldNameValueSeparator = "=", contentEnd = "", contentStart = "", useIdentityHashCode = true, useShortClassName, useClassName = true, useFieldNames = true, REGISTRY = ThreadLocal.withInitial(WeakHashMap::new), serialVersionUID = -2587890625525655916L]
+
+Classe: CharEncoding
+Package: org.apache.commons.lang3.CharEncoding
+     attributs privés sans getter: []
+
+Classe: CharSequenceUtils
+Package: org.apache.commons.lang3.CharSequenceUtils
+     attributs privés sans getter: [TO_STRING_LIMIT = 16, NOT_FOUND = -1]
+
+Classe: CharSet
+Package: org.apache.commons.lang3.CharSet
+     attributs privés sans getter: [set = Collections.synchronizedSet(new HashSet<>()), COMMON = Collections.synchronizedMap(new HashMap<>()), serialVersionUID = 5947847346149275958L]
+
+Classe: CharSetUtils
+Package: org.apache.commons.lang3.CharSetUtils
+     attributs privés sans getter: []
+
+Classe: CharUtils
+Package: org.apache.commons.lang3.CharUtils
+     attributs privés sans getter: [HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' }, CHAR_STRING_ARRAY = new String128]
+
+Classe: ClassLoaderUtils
+Package: org.apache.commons.lang3.ClassLoaderUtils
+     attributs privés sans getter: [EMPTY_URL_ARRAY = {}]
+
+Classe: ClassPathUtils
+Package: org.apache.commons.lang3.ClassPathUtils
+     attributs privés sans getter: []
+
+Classe: ClassUtils
+Package: org.apache.commons.lang3.ClassUtils
+     attributs privés sans getter: [reverseAbbreviationMap, abbreviationMap, wrapperPrimitiveMap = new HashMap<>(), primitiveWrapperMap = new HashMap<>(), namePrimitiveMap = new HashMap<>(), COMPARATOR = (o1, o2) -> Objects.compare(getName(o1), getName(o2), String::compareTo)]
+
+Classe: ComparableUtils
+Package: org.apache.commons.lang3.compare.ComparableUtils
+     attributs privés sans getter: []
+
+Classe: ObjectToStringComparator
+Package: org.apache.commons.lang3.compare.ObjectToStringComparator
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: AbstractCircuitBreaker
+Package: org.apache.commons.lang3.concurrent.AbstractCircuitBreaker
+     attributs privés sans getter: [changeSupport, state = new AtomicReference<>(State.CLOSED)]
+
+Classe: AbstractConcurrentInitializer
+Package: org.apache.commons.lang3.concurrent.AbstractConcurrentInitializer
+     attributs privés sans getter: [initializer, closer]
+
+Classe: AbstractFutureProxy
+Package: org.apache.commons.lang3.concurrent.AbstractFutureProxy
+     attributs privés sans getter: [future]
+
+Classe: AtomicInitializer
+Package: org.apache.commons.lang3.concurrent.AtomicInitializer
+     attributs privés sans getter: [reference = new AtomicReference<>(getNoInit()), NO_INIT = new Object()]
+
+Classe: AtomicSafeInitializer
+Package: org.apache.commons.lang3.concurrent.AtomicSafeInitializer
+     attributs privés sans getter: [reference = new AtomicReference<>(getNoInit()), factory = new AtomicReference<>(), NO_INIT = new Object()]
+
+Classe: BackgroundInitializer
+Package: org.apache.commons.lang3.concurrent.BackgroundInitializer
+     attributs privés sans getter: [future, executor, externalExecutor]
+
+Classe: BasicThreadFactory
+Package: org.apache.commons.lang3.concurrent.BasicThreadFactory
+     attributs privés sans getter: [daemon, priority, namingPattern, uncaughtExceptionHandler, wrappedFactory, threadCounter]
+
+Classe: CallableBackgroundInitializer
+Package: org.apache.commons.lang3.concurrent.CallableBackgroundInitializer
+     attributs privés sans getter: [callable]
+
+Classe: CircuitBreaker
+Package: org.apache.commons.lang3.concurrent.CircuitBreaker
+     attributs privés sans getter: []
+
+Classe: CircuitBreakingException
+Package: org.apache.commons.lang3.concurrent.CircuitBreakingException
+     attributs privés sans getter: [serialVersionUID = 1408176654686913340L]
+
+Classe: Computable
+Package: org.apache.commons.lang3.concurrent.Computable
+     attributs privés sans getter: []
+
+Classe: ConcurrentException
+Package: org.apache.commons.lang3.concurrent.ConcurrentException
+     attributs privés sans getter: [serialVersionUID = 6622707671812226130L]
+
+Classe: ConcurrentInitializer
+Package: org.apache.commons.lang3.concurrent.ConcurrentInitializer
+     attributs privés sans getter: []
+
+Classe: ConcurrentRuntimeException
+Package: org.apache.commons.lang3.concurrent.ConcurrentRuntimeException
+     attributs privés sans getter: [serialVersionUID = -6582182735562919670L]
+
+Classe: ConcurrentUtils
+Package: org.apache.commons.lang3.concurrent.ConcurrentUtils
+     attributs privés sans getter: []
+
+Classe: ConstantInitializer
+Package: org.apache.commons.lang3.concurrent.ConstantInitializer
+     attributs privés sans getter: [object, FMT_TO_STRING = "ConstantInitializer@%d  object = %s "]
+
+Classe: EventCountCircuitBreaker
+Package: org.apache.commons.lang3.concurrent.EventCountCircuitBreaker
+     attributs privés sans getter: [closingInterval, closingThreshold, openingInterval, openingThreshold, checkIntervalData, STRATEGY_MAP = createStrategyMap()]
+
+Classe: FutureTasks
+Package: org.apache.commons.lang3.concurrent.FutureTasks
+     attributs privés sans getter: []
+
+Classe: LazyInitializer
+Package: org.apache.commons.lang3.concurrent.LazyInitializer
+     attributs privés sans getter: [object = (T) NO_INIT, NO_INIT = new Object()]
+
+Classe: LockingVisitors
+Package: org.apache.commons.lang3.concurrent.locks.LockingVisitors
+     attributs privés sans getter: []
+
+Classe: Memoizer
+Package: org.apache.commons.lang3.concurrent.Memoizer
+     attributs privés sans getter: [recalculate, mappingFunction, cache = new ConcurrentHashMap<>()]
+
+Classe: MultiBackgroundInitializer
+Package: org.apache.commons.lang3.concurrent.MultiBackgroundInitializer
+     attributs privés sans getter: [childInitializers = new HashMap<>()]
+
+Classe: ThresholdCircuitBreaker
+Package: org.apache.commons.lang3.concurrent.ThresholdCircuitBreaker
+     attributs privés sans getter: [used, threshold, INITIAL_COUNT = 0L]
+
+Classe: TimedSemaphore
+Package: org.apache.commons.lang3.concurrent.TimedSemaphore
+     attributs privés sans getter: [shutdown, lastCallsPerPeriod, acquireCount, limit, periodCount, totalAcquireCount, task, ownExecutor, unit, period, executorService, THREAD_POOL_SIZE = 1]
+
+Classe: UncheckedExecutionException
+Package: org.apache.commons.lang3.concurrent.UncheckedExecutionException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: UncheckedFuture
+Package: org.apache.commons.lang3.concurrent.UncheckedFuture
+     attributs privés sans getter: []
+
+Classe: UncheckedTimeoutException
+Package: org.apache.commons.lang3.concurrent.UncheckedTimeoutException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: Conversion
+Package: org.apache.commons.lang3.Conversion
+     attributs privés sans getter: [FFFF = { false, false, false, false }, TFFF = { true, false, false, false }, FTFF = { false, true, false, false }, TTFF = { true, true, false, false }, FFTF = { false, false, true, false }, TFTF = { true, false, true, false }, FTTF = { false, true, true, false }, TTTF = { true, true, true, false }, FFFT = { false, false, false, true }, TFFT = { true, false, false, true }, FTFT = { false, true, false, true }, TTFT = { true, true, false, true }, FFTT = { false, false, true, true }, TFTT = { true, false, true, true }, FTTT = { false, true, true, true }, TTTT = { true, true, true, true }]
+
+Classe: DoubleRange
+Package: org.apache.commons.lang3.DoubleRange
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: EnumUtils
+Package: org.apache.commons.lang3.EnumUtils
+     attributs privés sans getter: [S_DOES_NOT_SEEM_TO_BE_AN_ENUM_TYPE = "%s does not seem to be an Enum type", NULL_ELEMENTS_NOT_PERMITTED = "null elements not permitted", ENUM_CLASS_MUST_BE_DEFINED = "EnumClass must be defined.", CANNOT_STORE_S_S_VALUES_IN_S_BITS = "Cannot store %s %s values in %s bits"]
+
+Classe: EventListenerSupport
+Package: org.apache.commons.lang3.event.EventListenerSupport
+     attributs privés sans getter: [prototypeArray, proxy, listeners = new CopyOnWriteArrayList<>(), serialVersionUID = 3593265990380473632L]
+
+Classe: EventUtils
+Package: org.apache.commons.lang3.event.EventUtils
+     attributs privés sans getter: []
+
+Classe: CloneFailedException
+Package: org.apache.commons.lang3.exception.CloneFailedException
+     attributs privés sans getter: [serialVersionUID = 20091223L]
+
+Classe: ContextedException
+Package: org.apache.commons.lang3.exception.ContextedException
+     attributs privés sans getter: [exceptionContext, serialVersionUID = 20110706L]
+
+Classe: ContextedRuntimeException
+Package: org.apache.commons.lang3.exception.ContextedRuntimeException
+     attributs privés sans getter: [exceptionContext, serialVersionUID = 20110706L]
+
+Classe: DefaultExceptionContext
+Package: org.apache.commons.lang3.exception.DefaultExceptionContext
+     attributs privés sans getter: [contextValues = new ArrayList<>(), serialVersionUID = 20110706L]
+
+Classe: ExceptionContext
+Package: org.apache.commons.lang3.exception.ExceptionContext
+     attributs privés sans getter: []
+
+Classe: ExceptionUtils
+Package: org.apache.commons.lang3.exception.ExceptionUtils
+     attributs privés sans getter: [WRAPPED_MARKER = " wrapped ", NOT_FOUND = -1, CAUSE_METHOD_NAMES = { "getCause", "getNextException", "getTargetException", "getException", "getSourceException", "getRootCause", "getCausedByException", "getNested", "getLinkedException", "getNestedException", "getLinkedCause", "getThrowable" }]
+
+Classe: UncheckedException
+Package: org.apache.commons.lang3.exception.UncheckedException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: UncheckedIllegalAccessException
+Package: org.apache.commons.lang3.exception.UncheckedIllegalAccessException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: UncheckedInterruptedException
+Package: org.apache.commons.lang3.exception.UncheckedInterruptedException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: UncheckedReflectiveOperationException
+Package: org.apache.commons.lang3.exception.UncheckedReflectiveOperationException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: BooleanConsumer
+Package: org.apache.commons.lang3.function.BooleanConsumer
+     attributs privés sans getter: [NOP = t -> {
+/* NOP */
+}]
+
+Classe: Consumers
+Package: org.apache.commons.lang3.function.Consumers
+     attributs privés sans getter: [NOP = Function.identity()::apply]
+
+Classe: Failable
+Package: org.apache.commons.lang3.function.Failable
+     attributs privés sans getter: []
+
+Classe: FailableBiConsumer
+Package: org.apache.commons.lang3.function.FailableBiConsumer
+     attributs privés sans getter: [NOP = (t, u) -> {
+/* NOP */
+}]
+
+Classe: FailableBiFunction
+Package: org.apache.commons.lang3.function.FailableBiFunction
+     attributs privés sans getter: [NOP = (t, u) -> null]
+
+Classe: FailableBiPredicate
+Package: org.apache.commons.lang3.function.FailableBiPredicate
+     attributs privés sans getter: [TRUE = (t, u) -> true, FALSE = (t, u) -> false]
+
+Classe: FailableBooleanSupplier
+Package: org.apache.commons.lang3.function.FailableBooleanSupplier
+     attributs privés sans getter: []
+
+Classe: FailableCallable
+Package: org.apache.commons.lang3.function.FailableCallable
+     attributs privés sans getter: []
+
+Classe: FailableConsumer
+Package: org.apache.commons.lang3.function.FailableConsumer
+     attributs privés sans getter: [NOP = Function.identity()::apply]
+
+Classe: FailableDoubleBinaryOperator
+Package: org.apache.commons.lang3.function.FailableDoubleBinaryOperator
+     attributs privés sans getter: []
+
+Classe: FailableDoubleConsumer
+Package: org.apache.commons.lang3.function.FailableDoubleConsumer
+     attributs privés sans getter: [NOP = t -> {
+/* NOP */
+}]
+
+Classe: FailableDoubleFunction
+Package: org.apache.commons.lang3.function.FailableDoubleFunction
+     attributs privés sans getter: [NOP = t -> null]
+
+Classe: FailableDoublePredicate
+Package: org.apache.commons.lang3.function.FailableDoublePredicate
+     attributs privés sans getter: [TRUE = t -> true, FALSE = t -> false]
+
+Classe: FailableDoubleSupplier
+Package: org.apache.commons.lang3.function.FailableDoubleSupplier
+     attributs privés sans getter: []
+
+Classe: FailableDoubleToIntFunction
+Package: org.apache.commons.lang3.function.FailableDoubleToIntFunction
+     attributs privés sans getter: [NOP = t -> 0]
+
+Classe: FailableDoubleToLongFunction
+Package: org.apache.commons.lang3.function.FailableDoubleToLongFunction
+     attributs privés sans getter: [NOP = t -> 0]
+
+Classe: FailableDoubleUnaryOperator
+Package: org.apache.commons.lang3.function.FailableDoubleUnaryOperator
+     attributs privés sans getter: [NOP = t -> 0d]
+
+Classe: FailableFunction
+Package: org.apache.commons.lang3.function.FailableFunction
+     attributs privés sans getter: [NOP = t -> null]
+
+Classe: FailableIntBinaryOperator
+Package: org.apache.commons.lang3.function.FailableIntBinaryOperator
+     attributs privés sans getter: []
+
+Classe: FailableIntConsumer
+Package: org.apache.commons.lang3.function.FailableIntConsumer
+     attributs privés sans getter: [NOP = t -> {
+/* NOP */
+}]
+
+Classe: FailableIntFunction
+Package: org.apache.commons.lang3.function.FailableIntFunction
+     attributs privés sans getter: [NOP = t -> null]
+
+Classe: FailableIntPredicate
+Package: org.apache.commons.lang3.function.FailableIntPredicate
+     attributs privés sans getter: [TRUE = t -> true, FALSE = t -> false]
+
+Classe: FailableIntSupplier
+Package: org.apache.commons.lang3.function.FailableIntSupplier
+     attributs privés sans getter: []
+
+Classe: FailableIntToDoubleFunction
+Package: org.apache.commons.lang3.function.FailableIntToDoubleFunction
+     attributs privés sans getter: [NOP = t -> 0d]
+
+Classe: FailableIntToLongFunction
+Package: org.apache.commons.lang3.function.FailableIntToLongFunction
+     attributs privés sans getter: [NOP = t -> 0L]
+
+Classe: FailableIntUnaryOperator
+Package: org.apache.commons.lang3.function.FailableIntUnaryOperator
+     attributs privés sans getter: [NOP = t -> 0]
+
+Classe: FailableLongBinaryOperator
+Package: org.apache.commons.lang3.function.FailableLongBinaryOperator
+     attributs privés sans getter: []
+
+Classe: FailableLongConsumer
+Package: org.apache.commons.lang3.function.FailableLongConsumer
+     attributs privés sans getter: [NOP = t -> {
+/* NOP */
+}]
+
+Classe: FailableLongFunction
+Package: org.apache.commons.lang3.function.FailableLongFunction
+     attributs privés sans getter: [NOP = t -> null]
+
+Classe: FailableLongPredicate
+Package: org.apache.commons.lang3.function.FailableLongPredicate
+     attributs privés sans getter: [TRUE = t -> true, FALSE = t -> false]
+
+Classe: FailableLongSupplier
+Package: org.apache.commons.lang3.function.FailableLongSupplier
+     attributs privés sans getter: []
+
+Classe: FailableLongToDoubleFunction
+Package: org.apache.commons.lang3.function.FailableLongToDoubleFunction
+     attributs privés sans getter: [NOP = t -> 0d]
+
+Classe: FailableLongToIntFunction
+Package: org.apache.commons.lang3.function.FailableLongToIntFunction
+     attributs privés sans getter: [NOP = t -> 0]
+
+Classe: FailableLongUnaryOperator
+Package: org.apache.commons.lang3.function.FailableLongUnaryOperator
+     attributs privés sans getter: [NOP = t -> 0L]
+
+Classe: FailableObjDoubleConsumer
+Package: org.apache.commons.lang3.function.FailableObjDoubleConsumer
+     attributs privés sans getter: [NOP = (t, u) -> {
+/* NOP */
+}]
+
+Classe: FailableObjIntConsumer
+Package: org.apache.commons.lang3.function.FailableObjIntConsumer
+     attributs privés sans getter: [NOP = (t, u) -> {
+/* NOP */
+}]
+
+Classe: FailableObjLongConsumer
+Package: org.apache.commons.lang3.function.FailableObjLongConsumer
+     attributs privés sans getter: [NOP = (t, u) -> {
+/* NOP */
+}]
+
+Classe: FailablePredicate
+Package: org.apache.commons.lang3.function.FailablePredicate
+     attributs privés sans getter: [TRUE = t -> true, FALSE = t -> false]
+
+Classe: FailableRunnable
+Package: org.apache.commons.lang3.function.FailableRunnable
+     attributs privés sans getter: []
+
+Classe: FailableShortSupplier
+Package: org.apache.commons.lang3.function.FailableShortSupplier
+     attributs privés sans getter: []
+
+Classe: FailableSupplier
+Package: org.apache.commons.lang3.function.FailableSupplier
+     attributs privés sans getter: [NUL = () -> null]
+
+Classe: FailableToDoubleBiFunction
+Package: org.apache.commons.lang3.function.FailableToDoubleBiFunction
+     attributs privés sans getter: [NOP = (t, u) -> 0d]
+
+Classe: FailableToDoubleFunction
+Package: org.apache.commons.lang3.function.FailableToDoubleFunction
+     attributs privés sans getter: [NOP = t -> 0d]
+
+Classe: FailableToIntBiFunction
+Package: org.apache.commons.lang3.function.FailableToIntBiFunction
+     attributs privés sans getter: [NOP = (t, u) -> 0]
+
+Classe: FailableToIntFunction
+Package: org.apache.commons.lang3.function.FailableToIntFunction
+     attributs privés sans getter: [NOP = t -> 0]
+
+Classe: FailableToLongBiFunction
+Package: org.apache.commons.lang3.function.FailableToLongBiFunction
+     attributs privés sans getter: [NOP = (t, u) -> 0]
+
+Classe: FailableToLongFunction
+Package: org.apache.commons.lang3.function.FailableToLongFunction
+     attributs privés sans getter: [NOP = t -> 0L]
+
+Classe: Functions
+Package: org.apache.commons.lang3.function.Functions
+     attributs privés sans getter: []
+
+Classe: IntToCharFunction
+Package: org.apache.commons.lang3.function.IntToCharFunction
+     attributs privés sans getter: []
+
+Classe: MethodInvokers
+Package: org.apache.commons.lang3.function.MethodInvokers
+     attributs privés sans getter: []
+
+Classe: Suppliers
+Package: org.apache.commons.lang3.function.Suppliers
+     attributs privés sans getter: [NUL = () -> null]
+
+Classe: ToBooleanBiFunction
+Package: org.apache.commons.lang3.function.ToBooleanBiFunction
+     attributs privés sans getter: []
+
+Classe: TriConsumer
+Package: org.apache.commons.lang3.function.TriConsumer
+     attributs privés sans getter: []
+
+Classe: TriFunction
+Package: org.apache.commons.lang3.function.TriFunction
+     attributs privés sans getter: []
+
+Classe: Functions
+Package: org.apache.commons.lang3.Functions
+     attributs privés sans getter: []
+
+Classe: IntegerRange
+Package: org.apache.commons.lang3.IntegerRange
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: JavaVersion
+Package: org.apache.commons.lang3.JavaVersion
+     attributs privés sans getter: [name, value, VERSION_SPLIT_REGEX = "\\."]
+
+Classe: LocaleUtils
+Package: org.apache.commons.lang3.LocaleUtils
+     attributs privés sans getter: [cCountriesByLanguage = new ConcurrentHashMap<>(), cLanguagesByCountry = new ConcurrentHashMap<>(), DASH = '-', UNDETERMINED = "und", UNDERSCORE = '_']
+
+Classe: LongRange
+Package: org.apache.commons.lang3.LongRange
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: Fraction
+Package: org.apache.commons.lang3.math.Fraction
+     attributs privés sans getter: [toProperString, toString, hashCode, denominator, numerator, serialVersionUID = 65382027393090L]
+
+Classe: IEEE754rUtils
+Package: org.apache.commons.lang3.math.IEEE754rUtils
+     attributs privés sans getter: []
+
+Classe: NumberUtils
+Package: org.apache.commons.lang3.math.NumberUtils
+     attributs privés sans getter: []
+
+Classe: Mutable
+Package: org.apache.commons.lang3.mutable.Mutable
+     attributs privés sans getter: []
+
+Classe: MutableBoolean
+Package: org.apache.commons.lang3.mutable.MutableBoolean
+     attributs privés sans getter: [value, serialVersionUID = -4830728138360036487L]
+
+Classe: MutableByte
+Package: org.apache.commons.lang3.mutable.MutableByte
+     attributs privés sans getter: [value, serialVersionUID = -1585823265L]
+
+Classe: MutableDouble
+Package: org.apache.commons.lang3.mutable.MutableDouble
+     attributs privés sans getter: [value, serialVersionUID = 1587163916L]
+
+Classe: MutableFloat
+Package: org.apache.commons.lang3.mutable.MutableFloat
+     attributs privés sans getter: [value, serialVersionUID = 5787169186L]
+
+Classe: MutableInt
+Package: org.apache.commons.lang3.mutable.MutableInt
+     attributs privés sans getter: [value, serialVersionUID = 512176391864L]
+
+Classe: MutableLong
+Package: org.apache.commons.lang3.mutable.MutableLong
+     attributs privés sans getter: [value, serialVersionUID = 62986528375L]
+
+Classe: MutableObject
+Package: org.apache.commons.lang3.mutable.MutableObject
+     attributs privés sans getter: [value, serialVersionUID = 86241875189L]
+
+Classe: MutableShort
+Package: org.apache.commons.lang3.mutable.MutableShort
+     attributs privés sans getter: [value, serialVersionUID = -2135791679L]
+
+Classe: NotImplementedException
+Package: org.apache.commons.lang3.NotImplementedException
+     attributs privés sans getter: [code, serialVersionUID = 20131021L]
+
+Classe: NumberRange
+Package: org.apache.commons.lang3.NumberRange
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: ObjectUtils
+Package: org.apache.commons.lang3.ObjectUtils
+     attributs privés sans getter: [AT_SIGN = '@']
+
+Classe: RandomStringUtils
+Package: org.apache.commons.lang3.RandomStringUtils
+     attributs privés sans getter: [random, ASCII_z = 'z', ASCII_A = 'A', ASCII_9 = '9', ASCII_0 = '0', ALPHANUMERICAL_CHARS = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }, SECURE_STRONG = new RandomStringUtils(RandomUtils::secureStrong), SECURE = new RandomStringUtils(SECURE_SUPPLIER), INSECURE = new RandomStringUtils(RandomUtils::insecure), SECURE_SUPPLIER = RandomUtils::secure]
+
+Classe: RandomUtils
+Package: org.apache.commons.lang3.RandomUtils
+     attributs privés sans getter: [random, SECURE_RANDOM_STRONG = ThreadLocal.withInitial(() -> {
+    try {
+        return SecureRandom.getInstanceStrong();
+    } catch (final NoSuchAlgorithmException e) {
+        throw new UncheckedException(e);
+    }
+}), SECURE_STRONG = new RandomUtils(SECURE_STRONG_SUPPLIER), SECURE_STRONG_SUPPLIER = () -> RandomUtils.SECURE_RANDOM_STRONG.get(), SECURE = new RandomUtils(SecureRandom::new), INSECURE = new RandomUtils(ThreadLocalRandom::current)]
+
+Classe: Range
+Package: org.apache.commons.lang3.Range
+     attributs privés sans getter: [toString, minimum, maximum, hashCode, comparator, serialVersionUID = 1L]
+
+Classe: ConstructorUtils
+Package: org.apache.commons.lang3.reflect.ConstructorUtils
+     attributs privés sans getter: []
+
+Classe: FieldUtils
+Package: org.apache.commons.lang3.reflect.FieldUtils
+     attributs privés sans getter: []
+
+Classe: InheritanceUtils
+Package: org.apache.commons.lang3.reflect.InheritanceUtils
+     attributs privés sans getter: []
+
+Classe: MethodUtils
+Package: org.apache.commons.lang3.reflect.MethodUtils
+     attributs privés sans getter: [METHOD_BY_SIGNATURE = Comparator.comparing(Method::toString)]
+
+Classe: Typed
+Package: org.apache.commons.lang3.reflect.Typed
+     attributs privés sans getter: []
+
+Classe: TypeLiteral
+Package: org.apache.commons.lang3.reflect.TypeLiteral
+     attributs privés sans getter: [toString, T = TypeLiteral.class.getTypeParameters()0]
+
+Classe: TypeUtils
+Package: org.apache.commons.lang3.reflect.TypeUtils
+     attributs privés sans getter: [GT_JOINER = AppendableJoiner.builder().setPrefix("<").setSuffix(">").setDelimiter(", ").setElementAppender((a, e) -> a.append(TypeUtils.anyToString(e))).get(), CTJ_JOINER = AppendableJoiner.<TypeVariable<Class<?>>>builder().setDelimiter(", ").setElementAppender((a, e) -> a.append(TypeUtils.anyToString(e))).get(), AMP_JOINER = AppendableJoiner.<Type>builder().setDelimiter(" & ").setElementAppender((a, e) -> a.append(TypeUtils.toString(e))).get()]
+
+Classe: RegExUtils
+Package: org.apache.commons.lang3.RegExUtils
+     attributs privés sans getter: []
+
+Classe: RuntimeEnvironment
+Package: org.apache.commons.lang3.RuntimeEnvironment
+     attributs privés sans getter: []
+
+Classe: SerializationException
+Package: org.apache.commons.lang3.SerializationException
+     attributs privés sans getter: [serialVersionUID = 4029025366392702726L]
+
+Classe: SerializationUtils
+Package: org.apache.commons.lang3.SerializationUtils
+     attributs privés sans getter: []
+
+Classe: IntStreams
+Package: org.apache.commons.lang3.stream.IntStreams
+     attributs privés sans getter: []
+
+Classe: LangCollectors
+Package: org.apache.commons.lang3.stream.LangCollectors
+     attributs privés sans getter: [CH_NOID = Collections.emptySet()]
+
+Classe: Streams
+Package: org.apache.commons.lang3.stream.Streams
+     attributs privés sans getter: []
+
+Classe: Streams
+Package: org.apache.commons.lang3.Streams
+     attributs privés sans getter: []
+
+Classe: StringEscapeUtils
+Package: org.apache.commons.lang3.StringEscapeUtils
+     attributs privés sans getter: []
+
+Classe: Strings
+Package: org.apache.commons.lang3.Strings
+     attributs privés sans getter: [nullIsLess, ignoreCase]
+
+Classe: StringUtils
+Package: org.apache.commons.lang3.StringUtils
+     attributs privés sans getter: [STRIP_ACCENTS_PATTERN = Pattern.compile("\\p{InCombiningDiacriticalMarks}+"), DEFAULT_TTL = 5, PAD_LIMIT = 8192]
+
+Classe: SystemProperties
+Package: org.apache.commons.lang3.SystemProperties
+     attributs privés sans getter: []
+
+Classe: SystemUtils
+Package: org.apache.commons.lang3.SystemUtils
+     attributs privés sans getter: [JAVA_SPECIFICATION_VERSION_AS_ENUM = JavaVersion.get(JAVA_SPECIFICATION_VERSION), OS_NAME_WINDOWS_PREFIX = "Windows"]
+
+Classe: CompositeFormat
+Package: org.apache.commons.lang3.text.CompositeFormat
+     attributs privés sans getter: [formatter, parser, serialVersionUID = -4329119827877627683L]
+
+Classe: ExtendedMessageFormat
+Package: org.apache.commons.lang3.text.ExtendedMessageFormat
+     attributs privés sans getter: [registry, toPattern, QUOTE = '\'', START_FE = '{', END_FE = '}', START_FMT = ',', DUMMY_PATTERN = "", HASH_SEED = 31, serialVersionUID = -2362048321261811743L]
+
+Classe: FormatFactory
+Package: org.apache.commons.lang3.text.FormatFactory
+     attributs privés sans getter: []
+
+Classe: FormattableUtils
+Package: org.apache.commons.lang3.text.FormattableUtils
+     attributs privés sans getter: [SIMPLEST_FORMAT = "%s"]
+
+Classe: StrBuilder
+Package: org.apache.commons.lang3.text.StrBuilder
+     attributs privés sans getter: [nullText, newLine, size, buffer, serialVersionUID = 7628716375283629643L, CAPACITY = 32]
+
+Classe: StrLookup
+Package: org.apache.commons.lang3.text.StrLookup
+     attributs privés sans getter: [SYSTEM_PROPERTIES_LOOKUP = new SystemPropertiesStrLookup(), NONE_LOOKUP = new MapStrLookup<>(null)]
+
+Classe: StrMatcher
+Package: org.apache.commons.lang3.text.StrMatcher
+     attributs privés sans getter: [NONE_MATCHER = new NoMatcher(), QUOTE_MATCHER = new CharSetMatcher("'\"".toCharArray()), DOUBLE_QUOTE_MATCHER = new CharMatcher('"'), SINGLE_QUOTE_MATCHER = new CharMatcher('\''), TRIM_MATCHER = new TrimMatcher(), SPLIT_MATCHER = new CharSetMatcher(" \t\n\r\f".toCharArray()), SPACE_MATCHER = new CharMatcher(' '), TAB_MATCHER = new CharMatcher('\t'), COMMA_MATCHER = new CharMatcher(',')]
+
+Classe: StrSubstitutor
+Package: org.apache.commons.lang3.text.StrSubstitutor
+     attributs privés sans getter: [preserveEscapes, enableSubstitutionInVariables, variableResolver, valueDelimiterMatcher, suffixMatcher, prefixMatcher, escapeChar]
+
+Classe: StrTokenizer
+Package: org.apache.commons.lang3.text.StrTokenizer
+     attributs privés sans getter: [ignoreEmptyTokens = true, emptyAsNull, trimmerMatcher = StrMatcher.noneMatcher(), ignoredMatcher = StrMatcher.noneMatcher(), quoteMatcher = StrMatcher.noneMatcher(), delimMatcher = StrMatcher.splitMatcher(), tokenPos, tokens, chars, TSV_TOKENIZER_PROTOTYPE, CSV_TOKENIZER_PROTOTYPE]
+
+Classe: AggregateTranslator
+Package: org.apache.commons.lang3.text.translate.AggregateTranslator
+     attributs privés sans getter: [translators]
+
+Classe: CharSequenceTranslator
+Package: org.apache.commons.lang3.text.translate.CharSequenceTranslator
+     attributs privés sans getter: [HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' }]
+
+Classe: CodePointTranslator
+Package: org.apache.commons.lang3.text.translate.CodePointTranslator
+     attributs privés sans getter: []
+
+Classe: EntityArrays
+Package: org.apache.commons.lang3.text.translate.EntityArrays
+     attributs privés sans getter: [JAVA_CTRL_CHARS_UNESCAPE = invert(JAVA_CTRL_CHARS_ESCAPE), JAVA_CTRL_CHARS_ESCAPE = { { "\b", "\\b" }, { "\n", "\\n" }, { "\t", "\\t" }, { "\f", "\\f" }, { "\r", "\\r" } }, APOS_UNESCAPE = invert(APOS_ESCAPE), APOS_ESCAPE = { // XML apostrophe
+{ "'", "&apos;" } }, BASIC_UNESCAPE = invert(BASIC_ESCAPE), BASIC_ESCAPE = { // " - double-quote
+{ "\"", "&quot;" }, // & - ampersand
+{ "&", "&amp;" }, // < - less-than
+{ "<", "&lt;" }, // > - greater-than
+{ ">", "&gt;" } }, HTML40_EXTENDED_UNESCAPE = invert(HTML40_EXTENDED_ESCAPE), HTML40_EXTENDED_ESCAPE = { // <!-- Latin Extended-B -->
+// latin small f with hook = function= florin, U+0192 ISOtech -->
+{ "\u0192", "&fnof;" }, // <!-- Greek -->
+// greek capital letter alpha, U+0391 -->
+{ "\u0391", "&Alpha;" }, // greek capital letter beta, U+0392 -->
+{ "\u0392", "&Beta;" }, // greek capital letter gamma, U+0393 ISOgrk3 -->
+{ "\u0393", "&Gamma;" }, // greek capital letter delta, U+0394 ISOgrk3 -->
+{ "\u0394", "&Delta;" }, // greek capital letter epsilon, U+0395 -->
+{ "\u0395", "&Epsilon;" }, // greek capital letter zeta, U+0396 -->
+{ "\u0396", "&Zeta;" }, // greek capital letter eta, U+0397 -->
+{ "\u0397", "&Eta;" }, // greek capital letter theta, U+0398 ISOgrk3 -->
+{ "\u0398", "&Theta;" }, // greek capital letter iota, U+0399 -->
+{ "\u0399", "&Iota;" }, // greek capital letter kappa, U+039A -->
+{ "\u039A", "&Kappa;" }, // greek capital letter lambda, U+039B ISOgrk3 -->
+{ "\u039B", "&Lambda;" }, // greek capital letter mu, U+039C -->
+{ "\u039C", "&Mu;" }, // greek capital letter nu, U+039D -->
+{ "\u039D", "&Nu;" }, // greek capital letter xi, U+039E ISOgrk3 -->
+{ "\u039E", "&Xi;" }, // greek capital letter omicron, U+039F -->
+{ "\u039F", "&Omicron;" }, // greek capital letter pi, U+03A0 ISOgrk3 -->
+{ "\u03A0", "&Pi;" }, // greek capital letter rho, U+03A1 -->
+{ "\u03A1", "&Rho;" }, // <!-- there is no Sigmaf, and no U+03A2 character either -->
+// greek capital letter sigma, U+03A3 ISOgrk3 -->
+{ "\u03A3", "&Sigma;" }, // greek capital letter tau, U+03A4 -->
+{ "\u03A4", "&Tau;" }, // greek capital letter upsilon, U+03A5 ISOgrk3 -->
+{ "\u03A5", "&Upsilon;" }, // greek capital letter phi, U+03A6 ISOgrk3 -->
+{ "\u03A6", "&Phi;" }, // greek capital letter chi, U+03A7 -->
+{ "\u03A7", "&Chi;" }, // greek capital letter psi, U+03A8 ISOgrk3 -->
+{ "\u03A8", "&Psi;" }, // greek capital letter omega, U+03A9 ISOgrk3 -->
+{ "\u03A9", "&Omega;" }, // greek small letter alpha, U+03B1 ISOgrk3 -->
+{ "\u03B1", "&alpha;" }, // greek small letter beta, U+03B2 ISOgrk3 -->
+{ "\u03B2", "&beta;" }, // greek small letter gamma, U+03B3 ISOgrk3 -->
+{ "\u03B3", "&gamma;" }, // greek small letter delta, U+03B4 ISOgrk3 -->
+{ "\u03B4", "&delta;" }, // greek small letter epsilon, U+03B5 ISOgrk3 -->
+{ "\u03B5", "&epsilon;" }, // greek small letter zeta, U+03B6 ISOgrk3 -->
+{ "\u03B6", "&zeta;" }, // greek small letter eta, U+03B7 ISOgrk3 -->
+{ "\u03B7", "&eta;" }, // greek small letter theta, U+03B8 ISOgrk3 -->
+{ "\u03B8", "&theta;" }, // greek small letter iota, U+03B9 ISOgrk3 -->
+{ "\u03B9", "&iota;" }, // greek small letter kappa, U+03BA ISOgrk3 -->
+{ "\u03BA", "&kappa;" }, // greek small letter lambda, U+03BB ISOgrk3 -->
+{ "\u03BB", "&lambda;" }, // greek small letter mu, U+03BC ISOgrk3 -->
+{ "\u03BC", "&mu;" }, // greek small letter nu, U+03BD ISOgrk3 -->
+{ "\u03BD", "&nu;" }, // greek small letter xi, U+03BE ISOgrk3 -->
+{ "\u03BE", "&xi;" }, // greek small letter omicron, U+03BF NEW -->
+{ "\u03BF", "&omicron;" }, // greek small letter pi, U+03C0 ISOgrk3 -->
+{ "\u03C0", "&pi;" }, // greek small letter rho, U+03C1 ISOgrk3 -->
+{ "\u03C1", "&rho;" }, // greek small letter final sigma, U+03C2 ISOgrk3 -->
+{ "\u03C2", "&sigmaf;" }, // greek small letter sigma, U+03C3 ISOgrk3 -->
+{ "\u03C3", "&sigma;" }, // greek small letter tau, U+03C4 ISOgrk3 -->
+{ "\u03C4", "&tau;" }, // greek small letter upsilon, U+03C5 ISOgrk3 -->
+{ "\u03C5", "&upsilon;" }, // greek small letter phi, U+03C6 ISOgrk3 -->
+{ "\u03C6", "&phi;" }, // greek small letter chi, U+03C7 ISOgrk3 -->
+{ "\u03C7", "&chi;" }, // greek small letter psi, U+03C8 ISOgrk3 -->
+{ "\u03C8", "&psi;" }, // greek small letter omega, U+03C9 ISOgrk3 -->
+{ "\u03C9", "&omega;" }, // greek small letter theta symbol, U+03D1 NEW -->
+{ "\u03D1", "&thetasym;" }, // greek upsilon with hook symbol, U+03D2 NEW -->
+{ "\u03D2", "&upsih;" }, // greek pi symbol, U+03D6 ISOgrk3 -->
+{ "\u03D6", "&piv;" }, // <!-- General Punctuation -->
+// bullet = black small circle, U+2022 ISOpub -->
+{ "\u2022", "&bull;" }, // <!-- bullet is NOT the same as bullet operator, U+2219 -->
+// horizontal ellipsis = three dot leader, U+2026 ISOpub -->
+{ "\u2026", "&hellip;" }, // prime = minutes = feet, U+2032 ISOtech -->
+{ "\u2032", "&prime;" }, // double prime = seconds = inches, U+2033 ISOtech -->
+{ "\u2033", "&Prime;" }, // overline = spacing overscore, U+203E NEW -->
+{ "\u203E", "&oline;" }, // fraction slash, U+2044 NEW -->
+{ "\u2044", "&frasl;" }, // <!-- Letterlike Symbols -->
+// script capital P = power set= Weierstrass p, U+2118 ISOamso -->
+{ "\u2118", "&weierp;" }, // blackletter capital I = imaginary part, U+2111 ISOamso -->
+{ "\u2111", "&image;" }, // blackletter capital R = real part symbol, U+211C ISOamso -->
+{ "\u211C", "&real;" }, // trade mark sign, U+2122 ISOnum -->
+{ "\u2122", "&trade;" }, // alef symbol = first transfinite cardinal, U+2135 NEW -->
+{ "\u2135", "&alefsym;" }, // <!-- alef symbol is NOT the same as hebrew letter alef, U+05D0 although the
+// same glyph could be used to depict both characters -->
+// <!-- Arrows -->
+// leftwards arrow, U+2190 ISOnum -->
+{ "\u2190", "&larr;" }, // upwards arrow, U+2191 ISOnum-->
+{ "\u2191", "&uarr;" }, // rightwards arrow, U+2192 ISOnum -->
+{ "\u2192", "&rarr;" }, // downwards arrow, U+2193 ISOnum -->
+{ "\u2193", "&darr;" }, // left right arrow, U+2194 ISOamsa -->
+{ "\u2194", "&harr;" }, // downwards arrow with corner leftwards= carriage return, U+21B5 NEW -->
+{ "\u21B5", "&crarr;" }, // leftwards double arrow, U+21D0 ISOtech -->
+{ "\u21D0", "&lArr;" }, // <!-- ISO 10646 does not say that lArr is the same as the 'is implied by'
+// arrow but also does not have any other character for that function.
+// So ? lArr canbe used for 'is implied by' as ISOtech suggests -->
+// upwards double arrow, U+21D1 ISOamsa -->
+{ "\u21D1", "&uArr;" }, // rightwards double arrow, U+21D2 ISOtech -->
+{ "\u21D2", "&rArr;" }, // <!-- ISO 10646 does not say this is the 'implies' character but does not
+// have another character with this function so ?rArr can be used for
+// 'implies' as ISOtech suggests -->
+// downwards double arrow, U+21D3 ISOamsa -->
+{ "\u21D3", "&dArr;" }, // left right double arrow, U+21D4 ISOamsa -->
+{ "\u21D4", "&hArr;" }, // <!-- Mathematical Operators -->
+// for all, U+2200 ISOtech -->
+{ "\u2200", "&forall;" }, // partial differential, U+2202 ISOtech -->
+{ "\u2202", "&part;" }, // there exists, U+2203 ISOtech -->
+{ "\u2203", "&exist;" }, // empty set = null set = diameter, U+2205 ISOamso -->
+{ "\u2205", "&empty;" }, // nabla = backward difference, U+2207 ISOtech -->
+{ "\u2207", "&nabla;" }, // element of, U+2208 ISOtech -->
+{ "\u2208", "&isin;" }, // not an element of, U+2209 ISOtech -->
+{ "\u2209", "&notin;" }, // contains as member, U+220B ISOtech -->
+{ "\u220B", "&ni;" }, // <!-- should there be a more memorable name than 'ni'? -->
+// n-ary product = product sign, U+220F ISOamsb -->
+{ "\u220F", "&prod;" }, // <!-- prod is NOT the same character as U+03A0 'greek capital letter pi'
+// though the same glyph might be used for both -->
+// n-ary summation, U+2211 ISOamsb -->
+{ "\u2211", "&sum;" }, // <!-- sum is NOT the same character as U+03A3 'greek capital letter sigma'
+// though the same glyph might be used for both -->
+// minus sign, U+2212 ISOtech -->
+{ "\u2212", "&minus;" }, // asterisk operator, U+2217 ISOtech -->
+{ "\u2217", "&lowast;" }, // square root = radical sign, U+221A ISOtech -->
+{ "\u221A", "&radic;" }, // proportional to, U+221D ISOtech -->
+{ "\u221D", "&prop;" }, // infinity, U+221E ISOtech -->
+{ "\u221E", "&infin;" }, // angle, U+2220 ISOamso -->
+{ "\u2220", "&ang;" }, // logical and = wedge, U+2227 ISOtech -->
+{ "\u2227", "&and;" }, // logical or = vee, U+2228 ISOtech -->
+{ "\u2228", "&or;" }, // intersection = cap, U+2229 ISOtech -->
+{ "\u2229", "&cap;" }, // union = cup, U+222A ISOtech -->
+{ "\u222A", "&cup;" }, // integral, U+222B ISOtech -->
+{ "\u222B", "&int;" }, // therefore, U+2234 ISOtech -->
+{ "\u2234", "&there4;" }, // tilde operator = varies with = similar to, U+223C ISOtech -->
+{ "\u223C", "&sim;" }, // <!-- tilde operator is NOT the same character as the tilde, U+007E, although
+// the same glyph might be used to represent both -->
+// approximately equal to, U+2245 ISOtech -->
+{ "\u2245", "&cong;" }, // almost equal to = asymptotic to, U+2248 ISOamsr -->
+{ "\u2248", "&asymp;" }, // not equal to, U+2260 ISOtech -->
+{ "\u2260", "&ne;" }, // identical to, U+2261 ISOtech -->
+{ "\u2261", "&equiv;" }, // less-than or equal to, U+2264 ISOtech -->
+{ "\u2264", "&le;" }, // greater-than or equal to, U+2265 ISOtech -->
+{ "\u2265", "&ge;" }, // subset of, U+2282 ISOtech -->
+{ "\u2282", "&sub;" }, // superset of, U+2283 ISOtech -->
+{ "\u2283", "&sup;" }, // <!-- note that nsup, 'not a superset of, U+2283' is not covered by the
+// Symbol font encoding and is not included. Should it be, for symmetry?
+// It is in ISOamsn -->,
+// not a subset of, U+2284 ISOamsn -->
+{ "\u2284", "&nsub;" }, // subset of or equal to, U+2286 ISOtech -->
+{ "\u2286", "&sube;" }, // superset of or equal to, U+2287 ISOtech -->
+{ "\u2287", "&supe;" }, // circled plus = direct sum, U+2295 ISOamsb -->
+{ "\u2295", "&oplus;" }, // circled times = vector product, U+2297 ISOamsb -->
+{ "\u2297", "&otimes;" }, // up tack = orthogonal to = perpendicular, U+22A5 ISOtech -->
+{ "\u22A5", "&perp;" }, // dot operator, U+22C5 ISOamsb -->
+{ "\u22C5", "&sdot;" }, // <!-- dot operator is NOT the same character as U+00B7 middle dot -->
+// <!-- Miscellaneous Technical -->
+// left ceiling = apl upstile, U+2308 ISOamsc -->
+{ "\u2308", "&lceil;" }, // right ceiling, U+2309 ISOamsc -->
+{ "\u2309", "&rceil;" }, // left floor = apl downstile, U+230A ISOamsc -->
+{ "\u230A", "&lfloor;" }, // right floor, U+230B ISOamsc -->
+{ "\u230B", "&rfloor;" }, // left-pointing angle bracket = bra, U+2329 ISOtech -->
+{ "\u2329", "&lang;" }, // <!-- lang is NOT the same character as U+003C 'less than' or U+2039 'single left-pointing angle quotation
+// mark' -->
+// right-pointing angle bracket = ket, U+232A ISOtech -->
+{ "\u232A", "&rang;" }, // <!-- rang is NOT the same character as U+003E 'greater than' or U+203A
+// 'single right-pointing angle quotation mark' -->
+// <!-- Geometric Shapes -->
+// lozenge, U+25CA ISOpub -->
+{ "\u25CA", "&loz;" }, // <!-- Miscellaneous Symbols -->
+// black spade suit, U+2660 ISOpub -->
+{ "\u2660", "&spades;" }, // <!-- black here seems to mean filled as opposed to hollow -->
+// black club suit = shamrock, U+2663 ISOpub -->
+{ "\u2663", "&clubs;" }, // black heart suit = valentine, U+2665 ISOpub -->
+{ "\u2665", "&hearts;" }, // black diamond suit, U+2666 ISOpub -->
+{ "\u2666", "&diams;" }, // <!-- Latin Extended-A -->
+// -- latin capital ligature OE, U+0152 ISOlat2 -->
+{ "\u0152", "&OElig;" }, // -- latin small ligature oe, U+0153 ISOlat2 -->
+{ "\u0153", "&oelig;" }, // <!-- ligature is a misnomer, this is a separate character in some languages -->
+// -- latin capital letter S with caron, U+0160 ISOlat2 -->
+{ "\u0160", "&Scaron;" }, // -- latin small letter s with caron, U+0161 ISOlat2 -->
+{ "\u0161", "&scaron;" }, // -- latin capital letter Y with dieresis, U+0178 ISOlat2 -->
+{ "\u0178", "&Yuml;" }, // <!-- Spacing Modifier Letters -->
+// -- modifier letter circumflex accent, U+02C6 ISOpub -->
+{ "\u02C6", "&circ;" }, // small tilde, U+02DC ISOdia -->
+{ "\u02DC", "&tilde;" }, // <!-- General Punctuation -->
+// en space, U+2002 ISOpub -->
+{ "\u2002", "&ensp;" }, // em space, U+2003 ISOpub -->
+{ "\u2003", "&emsp;" }, // thin space, U+2009 ISOpub -->
+{ "\u2009", "&thinsp;" }, // zero width non-joiner, U+200C NEW RFC 2070 -->
+{ "\u200C", "&zwnj;" }, // zero width joiner, U+200D NEW RFC 2070 -->
+{ "\u200D", "&zwj;" }, // left-to-right mark, U+200E NEW RFC 2070 -->
+{ "\u200E", "&lrm;" }, // right-to-left mark, U+200F NEW RFC 2070 -->
+{ "\u200F", "&rlm;" }, // en dash, U+2013 ISOpub -->
+{ "\u2013", "&ndash;" }, // em dash, U+2014 ISOpub -->
+{ "\u2014", "&mdash;" }, // left single quotation mark, U+2018 ISOnum -->
+{ "\u2018", "&lsquo;" }, // right single quotation mark, U+2019 ISOnum -->
+{ "\u2019", "&rsquo;" }, // single low-9 quotation mark, U+201A NEW -->
+{ "\u201A", "&sbquo;" }, // left double quotation mark, U+201C ISOnum -->
+{ "\u201C", "&ldquo;" }, // right double quotation mark, U+201D ISOnum -->
+{ "\u201D", "&rdquo;" }, // double low-9 quotation mark, U+201E NEW -->
+{ "\u201E", "&bdquo;" }, // dagger, U+2020 ISOpub -->
+{ "\u2020", "&dagger;" }, // double dagger, U+2021 ISOpub -->
+{ "\u2021", "&Dagger;" }, // per mille sign, U+2030 ISOtech -->
+{ "\u2030", "&permil;" }, // single left-pointing angle quotation mark, U+2039 ISO proposed -->
+{ "\u2039", "&lsaquo;" }, // <!-- lsaquo is proposed but not yet ISO standardized -->
+// single right-pointing angle quotation mark, U+203A ISO proposed -->
+{ "\u203A", "&rsaquo;" }, // <!-- rsaquo is proposed but not yet ISO standardized -->
+// -- euro sign, U+20AC NEW -->
+{ "\u20AC", "&euro;" } }, ISO8859_1_UNESCAPE = invert(ISO8859_1_ESCAPE), ISO8859_1_ESCAPE = { // non-breaking space
+{ "\u00A0", "&nbsp;" }, // inverted exclamation mark
+{ "\u00A1", "&iexcl;" }, // cent sign
+{ "\u00A2", "&cent;" }, // pound sign
+{ "\u00A3", "&pound;" }, // currency sign
+{ "\u00A4", "&curren;" }, // yen sign = yuan sign
+{ "\u00A5", "&yen;" }, // broken bar = broken vertical bar
+{ "\u00A6", "&brvbar;" }, // section sign
+{ "\u00A7", "&sect;" }, // dieresis = spacing dieresis
+{ "\u00A8", "&uml;" }, // © - copyright sign
+{ "\u00A9", "&copy;" }, // feminine ordinal indicator
+{ "\u00AA", "&ordf;" }, // left-pointing double angle quotation mark = left pointing guillemet
+{ "\u00AB", "&laquo;" }, // not sign
+{ "\u00AC", "&not;" }, // soft hyphen = discretionary hyphen
+{ "\u00AD", "&shy;" }, // ® - registered trademark sign
+{ "\u00AE", "&reg;" }, // macron = spacing macron = overline = APL overbar
+{ "\u00AF", "&macr;" }, // degree sign
+{ "\u00B0", "&deg;" }, // plus-minus sign = plus-or-minus sign
+{ "\u00B1", "&plusmn;" }, // superscript two = superscript digit two = squared
+{ "\u00B2", "&sup2;" }, // superscript three = superscript digit three = cubed
+{ "\u00B3", "&sup3;" }, // acute accent = spacing acute
+{ "\u00B4", "&acute;" }, // micro sign
+{ "\u00B5", "&micro;" }, // pilcrow sign = paragraph sign
+{ "\u00B6", "&para;" }, // middle dot = Georgian comma = Greek middle dot
+{ "\u00B7", "&middot;" }, // cedilla = spacing cedilla
+{ "\u00B8", "&cedil;" }, // superscript one = superscript digit one
+{ "\u00B9", "&sup1;" }, // masculine ordinal indicator
+{ "\u00BA", "&ordm;" }, // right-pointing double angle quotation mark = right pointing guillemet
+{ "\u00BB", "&raquo;" }, // vulgar fraction one quarter = fraction one quarter
+{ "\u00BC", "&frac14;" }, // vulgar fraction one half = fraction one half
+{ "\u00BD", "&frac12;" }, // vulgar fraction three quarters = fraction three quarters
+{ "\u00BE", "&frac34;" }, // inverted question mark = turned question mark
+{ "\u00BF", "&iquest;" }, // À - uppercase A, grave accent
+{ "\u00C0", "&Agrave;" }, // Á - uppercase A, acute accent
+{ "\u00C1", "&Aacute;" }, // Â - uppercase A, circumflex accent
+{ "\u00C2", "&Acirc;" }, // Ã - uppercase A, tilde
+{ "\u00C3", "&Atilde;" }, // Ä - uppercase A, umlaut
+{ "\u00C4", "&Auml;" }, // Å - uppercase A, ring
+{ "\u00C5", "&Aring;" }, // Æ - uppercase AE
+{ "\u00C6", "&AElig;" }, // Ç - uppercase C, cedilla
+{ "\u00C7", "&Ccedil;" }, // È - uppercase E, grave accent
+{ "\u00C8", "&Egrave;" }, // É - uppercase E, acute accent
+{ "\u00C9", "&Eacute;" }, // Ê - uppercase E, circumflex accent
+{ "\u00CA", "&Ecirc;" }, // Ë - uppercase E, umlaut
+{ "\u00CB", "&Euml;" }, // Ì - uppercase I, grave accent
+{ "\u00CC", "&Igrave;" }, // Í - uppercase I, acute accent
+{ "\u00CD", "&Iacute;" }, // Î - uppercase I, circumflex accent
+{ "\u00CE", "&Icirc;" }, // Ï - uppercase I, umlaut
+{ "\u00CF", "&Iuml;" }, // Ð - uppercase Eth, Icelandic
+{ "\u00D0", "&ETH;" }, // Ñ - uppercase N, tilde
+{ "\u00D1", "&Ntilde;" }, // Ò - uppercase O, grave accent
+{ "\u00D2", "&Ograve;" }, // Ó - uppercase O, acute accent
+{ "\u00D3", "&Oacute;" }, // Ô - uppercase O, circumflex accent
+{ "\u00D4", "&Ocirc;" }, // Õ - uppercase O, tilde
+{ "\u00D5", "&Otilde;" }, // Ö - uppercase O, umlaut
+{ "\u00D6", "&Ouml;" }, // multiplication sign
+{ "\u00D7", "&times;" }, // Ø - uppercase O, slash
+{ "\u00D8", "&Oslash;" }, // Ù - uppercase U, grave accent
+{ "\u00D9", "&Ugrave;" }, // Ú - uppercase U, acute accent
+{ "\u00DA", "&Uacute;" }, // Û - uppercase U, circumflex accent
+{ "\u00DB", "&Ucirc;" }, // Ü - uppercase U, umlaut
+{ "\u00DC", "&Uuml;" }, // Ý - uppercase Y, acute accent
+{ "\u00DD", "&Yacute;" }, // Þ - uppercase THORN, Icelandic
+{ "\u00DE", "&THORN;" }, // ß - lowercase sharps, German
+{ "\u00DF", "&szlig;" }, // à - lowercase a, grave accent
+{ "\u00E0", "&agrave;" }, // á - lowercase a, acute accent
+{ "\u00E1", "&aacute;" }, // â - lowercase a, circumflex accent
+{ "\u00E2", "&acirc;" }, // ã - lowercase a, tilde
+{ "\u00E3", "&atilde;" }, // ä - lowercase a, umlaut
+{ "\u00E4", "&auml;" }, // å - lowercase a, ring
+{ "\u00E5", "&aring;" }, // æ - lowercase ae
+{ "\u00E6", "&aelig;" }, // ç - lowercase c, cedilla
+{ "\u00E7", "&ccedil;" }, // è - lowercase e, grave accent
+{ "\u00E8", "&egrave;" }, // é - lowercase e, acute accent
+{ "\u00E9", "&eacute;" }, // ê - lowercase e, circumflex accent
+{ "\u00EA", "&ecirc;" }, // ë - lowercase e, umlaut
+{ "\u00EB", "&euml;" }, // ì - lowercase i, grave accent
+{ "\u00EC", "&igrave;" }, // í - lowercase i, acute accent
+{ "\u00ED", "&iacute;" }, // î - lowercase i, circumflex accent
+{ "\u00EE", "&icirc;" }, // ï - lowercase i, umlaut
+{ "\u00EF", "&iuml;" }, // ð - lowercase eth, Icelandic
+{ "\u00F0", "&eth;" }, // ñ - lowercase n, tilde
+{ "\u00F1", "&ntilde;" }, // ò - lowercase o, grave accent
+{ "\u00F2", "&ograve;" }, // ó - lowercase o, acute accent
+{ "\u00F3", "&oacute;" }, // ô - lowercase o, circumflex accent
+{ "\u00F4", "&ocirc;" }, // õ - lowercase o, tilde
+{ "\u00F5", "&otilde;" }, // ö - lowercase o, umlaut
+{ "\u00F6", "&ouml;" }, // division sign
+{ "\u00F7", "&divide;" }, // ø - lowercase o, slash
+{ "\u00F8", "&oslash;" }, // ù - lowercase u, grave accent
+{ "\u00F9", "&ugrave;" }, // ú - lowercase u, acute accent
+{ "\u00FA", "&uacute;" }, // û - lowercase u, circumflex accent
+{ "\u00FB", "&ucirc;" }, // ü - lowercase u, umlaut
+{ "\u00FC", "&uuml;" }, // ý - lowercase y, acute accent
+{ "\u00FD", "&yacute;" }, // þ - lowercase thorn, Icelandic
+{ "\u00FE", "&thorn;" }, // ÿ - lowercase y, umlaut
+{ "\u00FF", "&yuml;" } }]
+
+Classe: JavaUnicodeEscaper
+Package: org.apache.commons.lang3.text.translate.JavaUnicodeEscaper
+     attributs privés sans getter: []
+
+Classe: LookupTranslator
+Package: org.apache.commons.lang3.text.translate.LookupTranslator
+     attributs privés sans getter: [longest, shortest, prefixSet, lookupMap]
+
+Classe: NumericEntityEscaper
+Package: org.apache.commons.lang3.text.translate.NumericEntityEscaper
+     attributs privés sans getter: [between, above, below]
+
+Classe: NumericEntityUnescaper
+Package: org.apache.commons.lang3.text.translate.NumericEntityUnescaper
+     attributs privés sans getter: [options]
+
+Classe: OctalUnescaper
+Package: org.apache.commons.lang3.text.translate.OctalUnescaper
+     attributs privés sans getter: []
+
+Classe: UnicodeEscaper
+Package: org.apache.commons.lang3.text.translate.UnicodeEscaper
+     attributs privés sans getter: [between, above, below]
+
+Classe: UnicodeUnescaper
+Package: org.apache.commons.lang3.text.translate.UnicodeUnescaper
+     attributs privés sans getter: []
+
+Classe: UnicodeUnpairedSurrogateRemover
+Package: org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemover
+     attributs privés sans getter: []
+
+Classe: WordUtils
+Package: org.apache.commons.lang3.text.WordUtils
+     attributs privés sans getter: []
+
+Classe: ThreadUtils
+Package: org.apache.commons.lang3.ThreadUtils
+     attributs privés sans getter: [ALWAYS_TRUE = t -> true]
+
+Classe: CalendarUtils
+Package: org.apache.commons.lang3.time.CalendarUtils
+     attributs privés sans getter: [locale, calendar]
+
+Classe: DateFormatUtils
+Package: org.apache.commons.lang3.time.DateFormatUtils
+     attributs privés sans getter: [UTC_TIME_ZONE = FastTimeZone.getGmtTimeZone()]
+
+Classe: DateParser
+Package: org.apache.commons.lang3.time.DateParser
+     attributs privés sans getter: []
+
+Classe: DatePrinter
+Package: org.apache.commons.lang3.time.DatePrinter
+     attributs privés sans getter: []
+
+Classe: DateUtils
+Package: org.apache.commons.lang3.time.DateUtils
+     attributs privés sans getter: [fields = { { Calendar.MILLISECOND }, { Calendar.SECOND }, { Calendar.MINUTE }, { Calendar.HOUR_OF_DAY, Calendar.HOUR }, { Calendar.DATE, Calendar.DAY_OF_MONTH, Calendar.AM_PM /* Calendar.DAY_OF_YEAR, Calendar.DAY_OF_WEEK, Calendar.DAY_OF_WEEK_IN_MONTH */
+}, { Calendar.MONTH, SEMI_MONTH }, { Calendar.YEAR }, { Calendar.ERA } }]
+
+Classe: DurationFormatUtils
+Package: org.apache.commons.lang3.time.DurationFormatUtils
+     attributs privés sans getter: [S = "S", s = "s", m = "m", H = "H", d = "d", M = "M", y = "y", HOURS_PER_DAY = 24, SECONDS_PER_MINUTES = 60, MINUTES_PER_HOUR = 60]
+
+Classe: DurationUtils
+Package: org.apache.commons.lang3.time.DurationUtils
+     attributs privés sans getter: [LONG_TO_INT_RANGE = LongRange.of(NumberUtils.LONG_INT_MIN_VALUE, NumberUtils.LONG_INT_MAX_VALUE)]
+
+Classe: FastDateFormat
+Package: org.apache.commons.lang3.time.FastDateFormat
+     attributs privés sans getter: [parser, printer, cache = new AbstractFormatCache<FastDateFormat>() {
+
+    @Override
+    protected FastDateFormat createInstance(final String pattern, final TimeZone timeZone, final Locale locale) {
+        return new FastDateFormat(pattern, timeZone, locale);
+    }
+}, serialVersionUID = 2L]
+
+Classe: FastDateParser
+Package: org.apache.commons.lang3.time.FastDateParser
+     attributs privés sans getter: [patterns, startYear, century, locale, timeZone, pattern, MILLISECOND_STRATEGY = new NumberStrategy(Calendar.MILLISECOND), SECOND_STRATEGY = new NumberStrategy(Calendar.SECOND), MINUTE_STRATEGY = new NumberStrategy(Calendar.MINUTE), HOUR_STRATEGY = new NumberStrategy(Calendar.HOUR), HOUR12_STRATEGY = new NumberStrategy(Calendar.HOUR) {
+
+    @Override
+    int modify(final FastDateParser parser, final int iValue) {
+        return iValue == 12 ? 0 : iValue;
+    }
+}, HOUR24_OF_DAY_STRATEGY = new NumberStrategy(Calendar.HOUR_OF_DAY) {
+
+    @Override
+    int modify(final FastDateParser parser, final int iValue) {
+        return iValue == 24 ? 0 : iValue;
+    }
+}, HOUR_OF_DAY_STRATEGY = new NumberStrategy(Calendar.HOUR_OF_DAY), DAY_OF_WEEK_IN_MONTH_STRATEGY = new NumberStrategy(Calendar.DAY_OF_WEEK_IN_MONTH), DAY_OF_WEEK_STRATEGY = new NumberStrategy(Calendar.DAY_OF_WEEK) {
+
+    @Override
+    int modify(final FastDateParser parser, final int iValue) {
+        return iValue == 7 ? Calendar.SUNDAY : iValue + 1;
+    }
+}, DAY_OF_MONTH_STRATEGY = new NumberStrategy(Calendar.DAY_OF_MONTH), DAY_OF_YEAR_STRATEGY = new NumberStrategy(Calendar.DAY_OF_YEAR), WEEK_OF_MONTH_STRATEGY = new NumberStrategy(Calendar.WEEK_OF_MONTH), WEEK_OF_YEAR_STRATEGY = new NumberStrategy(Calendar.WEEK_OF_YEAR), LITERAL_YEAR_STRATEGY = new NumberStrategy(Calendar.YEAR), NUMBER_MONTH_STRATEGY = new NumberStrategy(Calendar.MONTH) {
+
+    @Override
+    int modify(final FastDateParser parser, final int iValue) {
+        return iValue - 1;
+    }
+}, ABBREVIATED_YEAR_STRATEGY = new NumberStrategy(Calendar.YEAR) {
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    int modify(final FastDateParser parser, final int iValue) {
+        return iValue < 100 ? parser.adjustYear(iValue) : iValue;
+    }
+}, caches = new ConcurrentMapCalendar.FIELD_COUNT, LONGER_FIRST_LOWERCASE = Comparator.reverseOrder(), JAPANESE_IMPERIAL = new Locale("ja", "JP", "JP"), serialVersionUID = 3L]
+
+Classe: FastDatePrinter
+Package: org.apache.commons.lang3.time.FastDatePrinter
+     attributs privés sans getter: [maxLengthEstimate, rules, locale, timeZone, pattern, cTimeZoneDisplayCache = new ConcurrentHashMap<>(7), MAX_DIGITS = 10, serialVersionUID = 1L, EMPTY_RULE_ARRAY = {}]
+
+Classe: FastTimeZone
+Package: org.apache.commons.lang3.time.FastTimeZone
+     attributs privés sans getter: [GREENWICH = new GmtTimeZone(false, 0, 0), GMT_PATTERN = Pattern.compile("^(?:(?i)GMT)?(+-)?(\\d\\d?)?(:?(\\d\\d?))?$")]
+
+Classe: StopWatch
+Package: org.apache.commons.lang3.time.StopWatch
+     attributs privés sans getter: [stopTimeNanos, stopInstant, startInstant, startTimeNanos, splitState = SplitState.UNSPLIT, runningState = State.UNSTARTED, message, NANO_2_MILLIS = 1_000_000L]
+
+Classe: TimeZones
+Package: org.apache.commons.lang3.time.TimeZones
+     attributs privés sans getter: []
+
+Classe: ImmutablePair
+Package: org.apache.commons.lang3.tuple.ImmutablePair
+     attributs privés sans getter: [serialVersionUID = 4954918890077093841L, NULL = new ImmutablePair<>(null, null)]
+
+Classe: ImmutableTriple
+Package: org.apache.commons.lang3.tuple.ImmutableTriple
+     attributs privés sans getter: [serialVersionUID = 1L, NULL = new ImmutableTriple<>(null, null, null)]
+
+Classe: MutablePair
+Package: org.apache.commons.lang3.tuple.MutablePair
+     attributs privés sans getter: [serialVersionUID = 4954918890077093841L]
+
+Classe: MutableTriple
+Package: org.apache.commons.lang3.tuple.MutableTriple
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: Pair
+Package: org.apache.commons.lang3.tuple.Pair
+     attributs privés sans getter: [serialVersionUID = 4954918890077093841L]
+
+Classe: Triple
+Package: org.apache.commons.lang3.tuple.Triple
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: FluentBitSet
+Package: org.apache.commons.lang3.util.FluentBitSet
+     attributs privés sans getter: [bitSet, serialVersionUID = 1L]
+
+Classe: Validate
+Package: org.apache.commons.lang3.Validate
+     attributs privés sans getter: [DEFAULT_IS_INSTANCE_OF_EX_MESSAGE = "Expected type: %s, actual: %s", DEFAULT_IS_ASSIGNABLE_EX_MESSAGE = "Cannot assign a %s to a %s", DEFAULT_VALID_STATE_EX_MESSAGE = "The validated state is false", DEFAULT_VALID_INDEX_COLLECTION_EX_MESSAGE = "The validated collection index is invalid: %d", DEFAULT_VALID_INDEX_CHAR_SEQUENCE_EX_MESSAGE = "The validated character sequence index is invalid: %d", DEFAULT_VALID_INDEX_ARRAY_EX_MESSAGE = "The validated array index is invalid: %d", DEFAULT_NOT_EMPTY_MAP_EX_MESSAGE = "The validated map is empty", DEFAULT_NOT_EMPTY_COLLECTION_EX_MESSAGE = "The validated collection is empty", DEFAULT_NOT_EMPTY_CHAR_SEQUENCE_EX_MESSAGE = "The validated character sequence is empty", DEFAULT_NOT_EMPTY_ARRAY_EX_MESSAGE = "The validated array is empty", DEFAULT_NOT_BLANK_EX_MESSAGE = "The validated character sequence is blank", DEFAULT_NO_NULL_ELEMENTS_COLLECTION_EX_MESSAGE = "The validated collection contains null element at index: %d", DEFAULT_NO_NULL_ELEMENTS_ARRAY_EX_MESSAGE = "The validated array contains null element at index: %d", DEFAULT_IS_TRUE_EX_MESSAGE = "The validated expression is false", DEFAULT_IS_NULL_EX_MESSAGE = "The validated object is null", DEFAULT_MATCHES_PATTERN_EX = "The string %s does not match the pattern %s", DEFAULT_INCLUSIVE_BETWEEN_EX_MESSAGE = "The value %s is not in the specified inclusive range of %s to %s", DEFAULT_EXCLUSIVE_BETWEEN_EX_MESSAGE = "The value %s is not in the specified exclusive range of %s to %s", DEFAULT_FINITE_EX_MESSAGE = "The value is invalid: %f", DEFAULT_NOT_NAN_EX_MESSAGE = "The validated value is not a number"]
+
+Classe: AbstractLangTest
+Package: org.apache.commons.lang3.AbstractLangTest
+     attributs privés sans getter: []
+
+Classe: AnnotationUtilsTest
+Package: org.apache.commons.lang3.AnnotationUtilsTest
+     attributs privés sans getter: [field4, field3, field2, field1]
+
+Classe: AppendableJoinerTest
+Package: org.apache.commons.lang3.AppendableJoinerTest
+     attributs privés sans getter: []
+
+Classe: ArchUtilsTest
+Package: org.apache.commons.lang3.ArchUtilsTest
+     attributs privés sans getter: [RISCV_32 = "riscv32", RISCV_64 = "riscv64", AARCH_64 = "aarch64", X86_64 = "x86_64", X86 = "x86", PPC64 = "ppc64", PPC = "ppc", IA64_32 = "ia64_32", IA64 = "ia64"]
+
+Classe: ArrayFillTest
+Package: org.apache.commons.lang3.ArrayFillTest
+     attributs privés sans getter: []
+
+Classe: ArraySorterTest
+Package: org.apache.commons.lang3.ArraySorterTest
+     attributs privés sans getter: []
+
+Classe: ArrayUtilsAddTest
+Package: org.apache.commons.lang3.ArrayUtilsAddTest
+     attributs privés sans getter: []
+
+Classe: ArrayUtilsInsertTest
+Package: org.apache.commons.lang3.ArrayUtilsInsertTest
+     attributs privés sans getter: []
+
+Classe: ArrayUtilsRemoveMultipleTest
+Package: org.apache.commons.lang3.ArrayUtilsRemoveMultipleTest
+     attributs privés sans getter: [NULL_INDICES = null]
+
+Classe: ArrayUtilsRemoveTest
+Package: org.apache.commons.lang3.ArrayUtilsRemoveTest
+     attributs privés sans getter: []
+
+Classe: ArrayUtilsSetTest
+Package: org.apache.commons.lang3.ArrayUtilsSetTest
+     attributs privés sans getter: []
+
+Classe: ArrayUtilsTest
+Package: org.apache.commons.lang3.ArrayUtilsTest
+     attributs privés sans getter: [SEED = 16111981L]
+
+Classe: BitFieldTest
+Package: org.apache.commons.lang3.BitFieldTest
+     attributs privés sans getter: [bf_zero = new BitField(0), bf_single = new BitField(0x4000), bf_multi = new BitField(0x3F80)]
+
+Classe: BooleanUtilsTest
+Package: org.apache.commons.lang3.BooleanUtilsTest
+     attributs privés sans getter: []
+
+Classe: CompareToBuilderTest
+Package: org.apache.commons.lang3.builder.CompareToBuilderTest
+     attributs privés sans getter: []
+
+Classe: DefaultToStringStyleTest
+Package: org.apache.commons.lang3.builder.DefaultToStringStyleTest
+     attributs privés sans getter: [baseStr = base.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(base)), base = Integer.valueOf(5)]
+
+Classe: DiffBuilderTest
+Package: org.apache.commons.lang3.builder.DiffBuilderTest
+     attributs privés sans getter: [SHORT_STYLE = ToStringStyle.SHORT_PREFIX_STYLE]
+
+Classe: DiffResultTest
+Package: org.apache.commons.lang3.builder.DiffResultTest
+     attributs privés sans getter: [SIMPLE_TRUE = new SimpleClass(true), SIMPLE_FALSE = new SimpleClass(false), SHORT_STYLE = ToStringStyle.SHORT_PREFIX_STYLE]
+
+Classe: DiffTest
+Package: org.apache.commons.lang3.builder.DiffTest
+     attributs privés sans getter: [booleanDiff = new BooleanDiff(FIELD_NAME), FIELD_NAME = "field"]
+
+Classe: EqualsBuilderTest
+Package: org.apache.commons.lang3.builder.EqualsBuilderTest
+     attributs privés sans getter: []
+
+Classe: HashCodeBuilderAndEqualsBuilderTest
+Package: org.apache.commons.lang3.builder.HashCodeBuilderAndEqualsBuilderTest
+     attributs privés sans getter: []
+
+Classe: HashCodeBuilderTest
+Package: org.apache.commons.lang3.builder.HashCodeBuilderTest
+     attributs privés sans getter: []
+
+Classe: IDKeyTest
+Package: org.apache.commons.lang3.builder.IDKeyTest
+     attributs privés sans getter: []
+
+Classe: JsonToStringStyleTest
+Package: org.apache.commons.lang3.builder.JsonToStringStyleTest
+     attributs privés sans getter: [base = Integer.valueOf(5)]
+
+Classe: MultilineRecursiveToStringStyleTest
+Package: org.apache.commons.lang3.builder.MultilineRecursiveToStringStyleTest
+     attributs privés sans getter: [BASE_WITH_ARRAYS_TO_STRING = "" + LS + "  boolArray=#BOOLEAN#," + LS + "  byteArray=#BYTE#," + LS + "  charArray=#CHAR#," + LS + "  doubleArray=#DOUBLE#," + LS + "  floatArray=#FLOAT#," + LS + "  intArray=#INT#," + LS + "  longArray=#LONG#," + LS + "  shortArray=#SHORT#," + LS + "  stringArray=#STRING#" + LS + "", LS = System.lineSeparator()]
+
+Classe: MultiLineToStringStyleTest
+Package: org.apache.commons.lang3.builder.MultiLineToStringStyleTest
+     attributs privés sans getter: [baseStr = base.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(base)), base = Integer.valueOf(5)]
+
+Classe: NoClassNameToStringStyleTest
+Package: org.apache.commons.lang3.builder.NoClassNameToStringStyleTest
+     attributs privés sans getter: [base = Integer.valueOf(5)]
+
+Classe: NoFieldNamesToStringStyleTest
+Package: org.apache.commons.lang3.builder.NoFieldNamesToStringStyleTest
+     attributs privés sans getter: [baseStr = base.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(base)), base = Integer.valueOf(5)]
+
+Classe: RecursiveToStringStyleTest
+Package: org.apache.commons.lang3.builder.RecursiveToStringStyleTest
+     attributs privés sans getter: [baseStr = base.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(base)), base = Integer.valueOf(5)]
+
+Classe: ReflectionDiffBuilderTest
+Package: org.apache.commons.lang3.builder.ReflectionDiffBuilderTest
+     attributs privés sans getter: [SHORT_STYLE = ToStringStyle.SHORT_PREFIX_STYLE]
+
+Classe: ReflectionToStringBuilderConcurrencyTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest
+     attributs privés sans getter: [REPEAT = 100, DATA_SIZE = 100000]
+
+Classe: ReflectionToStringBuilderCustomImplementationTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderCustomImplementationTest
+     attributs privés sans getter: [stringField = "string"]
+
+Classe: ReflectionToStringBuilderExcludeNullValuesTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeNullValuesTest
+     attributs privés sans getter: [BOTH_NULL = new TestFixture(null, null), SECOND_NULL = new TestFixture(0, null), FIRST_NULL = new TestFixture(null, "str"), BOTH_NON_NULL = new TestFixture(0, "str"), STRING_FIELD_NAME = "testStringField", INTEGER_FIELD_NAME = "testIntegerField"]
+
+Classe: ReflectionToStringBuilderExcludeTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeTest
+     attributs privés sans getter: [SECRET_VALUE = "secret value", SECRET_FIELD = "secretField", NOT_SECRET_VALUE = "Hello World!", NOT_SECRET_FIELD = "showField"]
+
+Classe: ReflectionToStringBuilderExcludeWithAnnotationTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeWithAnnotationTest
+     attributs privés sans getter: [EXCLUDED_FIELD_VALUE = "excluded field value", EXCLUDED_FIELD_NAME = "excludedField", INCLUDED_FIELD_VALUE = "Hello World!", INCLUDED_FIELD_NAME = "includedField"]
+
+Classe: ReflectionToStringBuilderIncludeTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderIncludeTest
+     attributs privés sans getter: [FIELDS_VALUES_TO_SHOW = { VALUES0, VALUES3 }, FIELDS_TO_SHOW = { FIELDS0, FIELDS3 }, SINGLE_FIELD_VALUE_TO_SHOW = VALUES2, SINGLE_FIELD_TO_SHOW = FIELDS2, VALUES = { "value 1", "value 2", "value 3", "value 4", "value 5" }, FIELDS = { "field1", "field2", "field3", "field4", "field5" }]
+
+Classe: ReflectionToStringBuilderMutateInspectConcurrencyTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderMutateInspectConcurrencyTest
+     attributs privés sans getter: []
+
+Classe: ReflectionToStringBuilderSummaryTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderSummaryTest
+     attributs privés sans getter: [summaryString = "summary", stringField = "string"]
+
+Classe: ReflectionToStringBuilderTest
+Package: org.apache.commons.lang3.builder.ReflectionToStringBuilderTest
+     attributs privés sans getter: []
+
+Classe: ShortPrefixToStringStyleTest
+Package: org.apache.commons.lang3.builder.ShortPrefixToStringStyleTest
+     attributs privés sans getter: [baseStr = "Integer", base = Integer.valueOf(5)]
+
+Classe: SimpleToStringStyleTest
+Package: org.apache.commons.lang3.builder.SimpleToStringStyleTest
+     attributs privés sans getter: [base = Integer.valueOf(5)]
+
+Classe: StandardToStringStyleTest
+Package: org.apache.commons.lang3.builder.StandardToStringStyleTest
+     attributs privés sans getter: [baseStr = "Integer", base = Integer.valueOf(5), STYLE = new StandardToStringStyle()]
+
+Classe: ToStringBuilderTest
+Package: org.apache.commons.lang3.builder.ToStringBuilderTest
+     attributs privés sans getter: [baseStr = base.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(base)), base = Integer.valueOf(5), ARRAYLIST_INITIAL_CAPACITY = 10]
+
+Classe: ToStringStyleConcurrencyTest
+Package: org.apache.commons.lang3.builder.ToStringStyleConcurrencyTest
+     attributs privés sans getter: [REPEAT = 100, LIST_SIZE = 100000, LIST]
+
+Classe: ToStringStyleTest
+Package: org.apache.commons.lang3.builder.ToStringStyleTest
+     attributs privés sans getter: []
+
+Classe: CachedRandomBitsTest
+Package: org.apache.commons.lang3.CachedRandomBitsTest
+     attributs privés sans getter: []
+
+Classe: CharEncodingTest
+Package: org.apache.commons.lang3.CharEncodingTest
+     attributs privés sans getter: []
+
+Classe: CharRangeTest
+Package: org.apache.commons.lang3.CharRangeTest
+     attributs privés sans getter: []
+
+Classe: CharSequenceUtilsTest
+Package: org.apache.commons.lang3.CharSequenceUtilsTest
+     attributs privés sans getter: [TEST_DATA = { // @formatter:off
+// Source  IgnoreCase Offset Other  Offset Length Result
+new TestData("", true, -1, "", -1, -1, false), new TestData("", true, 0, "", 0, 1, false), new TestData("a", true, 0, "abc", 0, 0, true), new TestData("a", true, 0, "abc", 0, 1, true), new TestData("a", true, 0, null, 0, 0, NullPointerException.class), new TestData(null, true, 0, null, 0, 0, NullPointerException.class), new TestData(null, true, 0, "", 0, 0, NullPointerException.class), new TestData("Abc", true, 0, "abc", 0, 3, true), new TestData("Abc", false, 0, "abc", 0, 3, false), new TestData("Abc", true, 1, "abc", 1, 2, true), new TestData("Abc", false, 1, "abc", 1, 2, true), new TestData("Abcd", true, 1, "abcD", 1, 2, true), new TestData("Abcd", false, 1, "abcD", 1, 2, true) // @formatter:on
+}]
+
+Classe: CharsetsTest
+Package: org.apache.commons.lang3.CharsetsTest
+     attributs privés sans getter: []
+
+Classe: CharSetTest
+Package: org.apache.commons.lang3.CharSetTest
+     attributs privés sans getter: []
+
+Classe: CharSetUtilsTest
+Package: org.apache.commons.lang3.CharSetUtilsTest
+     attributs privés sans getter: []
+
+Classe: CharUtilsPerfRun
+Package: org.apache.commons.lang3.CharUtilsPerfRun
+     attributs privés sans getter: [ALL_CHARS, COUNT = 5000, WARM_UP = 100]
+
+Classe: CharUtilsTest
+Package: org.apache.commons.lang3.CharUtilsTest
+     attributs privés sans getter: [CHARACTER_B = Character.valueOf('B'), CHARACTER_A = Character.valueOf('A'), CHAR_COPY = '\u00a9']
+
+Classe: ClassLoaderUtilsTest
+Package: org.apache.commons.lang3.ClassLoaderUtilsTest
+     attributs privés sans getter: []
+
+Classe: ClassPathUtilsTest
+Package: org.apache.commons.lang3.ClassPathUtilsTest
+     attributs privés sans getter: []
+
+Classe: ClassUtilsOssFuzzTest
+Package: org.apache.commons.lang3.ClassUtilsOssFuzzTest
+     attributs privés sans getter: []
+
+Classe: ClassUtilsTest
+Package: org.apache.commons.lang3.ClassUtilsTest
+     attributs privés sans getter: [OBJECT_CANONICAL_NAME = "java.lang.Object"]
+
+Classe: ComparableUtilsTest
+Package: org.apache.commons.lang3.compare.ComparableUtilsTest
+     attributs privés sans getter: []
+
+Classe: ObjectToStringComparatorTest
+Package: org.apache.commons.lang3.compare.ObjectToStringComparatorTest
+     attributs privés sans getter: []
+
+Classe: AbstractConcurrentInitializerCloseAndExceptionsTest
+Package: org.apache.commons.lang3.concurrent.AbstractConcurrentInitializerCloseAndExceptionsTest
+     attributs privés sans getter: []
+
+Classe: AbstractConcurrentInitializerTest
+Package: org.apache.commons.lang3.concurrent.AbstractConcurrentInitializerTest
+     attributs privés sans getter: []
+
+Classe: AtomicInitializerNonObjectTest
+Package: org.apache.commons.lang3.concurrent.AtomicInitializerNonObjectTest
+     attributs privés sans getter: []
+
+Classe: AtomicInitializerObjectTest
+Package: org.apache.commons.lang3.concurrent.AtomicInitializerObjectTest
+     attributs privés sans getter: []
+
+Classe: AtomicInitializerSupplierTest
+Package: org.apache.commons.lang3.concurrent.AtomicInitializerSupplierTest
+     attributs privés sans getter: []
+
+Classe: AtomicSafeInitializerSupplierTest
+Package: org.apache.commons.lang3.concurrent.AtomicSafeInitializerSupplierTest
+     attributs privés sans getter: [initCounter = new AtomicInteger()]
+
+Classe: AtomicSafeInitializerTest
+Package: org.apache.commons.lang3.concurrent.AtomicSafeInitializerTest
+     attributs privés sans getter: [initializer]
+
+Classe: BackgroundInitializerSupplierTest
+Package: org.apache.commons.lang3.concurrent.BackgroundInitializerSupplierTest
+     attributs privés sans getter: []
+
+Classe: BackgroundInitializerTest
+Package: org.apache.commons.lang3.concurrent.BackgroundInitializerTest
+     attributs privés sans getter: []
+
+Classe: BasicThreadFactoryTest
+Package: org.apache.commons.lang3.concurrent.BasicThreadFactoryTest
+     attributs privés sans getter: [builder, PATTERN = "testThread-%d"]
+
+Classe: CallableBackgroundInitializerTest
+Package: org.apache.commons.lang3.concurrent.CallableBackgroundInitializerTest
+     attributs privés sans getter: [RESULT = Integer.valueOf(42)]
+
+Classe: CircuitBreakingExceptionTest
+Package: org.apache.commons.lang3.concurrent.CircuitBreakingExceptionTest
+     attributs privés sans getter: []
+
+Classe: ConcurrentUtilsTest
+Package: org.apache.commons.lang3.concurrent.ConcurrentUtilsTest
+     attributs privés sans getter: []
+
+Classe: ConstantInitializerTest
+Package: org.apache.commons.lang3.concurrent.ConstantInitializerTest
+     attributs privés sans getter: [init, VALUE = 42]
+
+Classe: EventCountCircuitBreakerTest
+Package: org.apache.commons.lang3.concurrent.EventCountCircuitBreakerTest
+     attributs privés sans getter: [NANO_FACTOR = 1000L * 1000L * 1000L, CLOSING_THRESHOLD = 5, OPENING_THRESHOLD = 10]
+
+Classe: FutureTasksTest
+Package: org.apache.commons.lang3.concurrent.FutureTasksTest
+     attributs privés sans getter: []
+
+Classe: LazyInitializerAnonClassTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerAnonClassTest
+     attributs privés sans getter: []
+
+Classe: LazyInitializerCloserTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerCloserTest
+     attributs privés sans getter: [closed = new AtomicBoolean()]
+
+Classe: LazyInitializerFailableCloserTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerFailableCloserTest
+     attributs privés sans getter: [closed = new AtomicBoolean()]
+
+Classe: LazyInitializerSimpleTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerSimpleTest
+     attributs privés sans getter: []
+
+Classe: LazyInitializerSingleInstanceTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerSingleInstanceTest
+     attributs privés sans getter: [initializer]
+
+Classe: LazyInitializerSupplierTest
+Package: org.apache.commons.lang3.concurrent.LazyInitializerSupplierTest
+     attributs privés sans getter: []
+
+Classe: LockingVisitorsTest
+Package: org.apache.commons.lang3.concurrent.locks.LockingVisitorsTest
+     attributs privés sans getter: [TOTAL_DELAY = DELAY.multipliedBy(NUMBER_OF_THREADS), NUMBER_OF_THREADS = 10, DELAY = Duration.ofMillis(1500), SHORT_DELAY = Duration.ofMillis(100)]
+
+Classe: MemoizerComputableTest
+Package: org.apache.commons.lang3.concurrent.MemoizerComputableTest
+     attributs privés sans getter: [computable]
+
+Classe: MemoizerFunctionTest
+Package: org.apache.commons.lang3.concurrent.MemoizerFunctionTest
+     attributs privés sans getter: [function]
+
+Classe: MultiBackgroundInitializerSupplierTest
+Package: org.apache.commons.lang3.concurrent.MultiBackgroundInitializerSupplierTest
+     attributs privés sans getter: [nullPointerExceptionConsumer, ioExceptionConsumer, ioException, npe]
+
+Classe: MultiBackgroundInitializerTest
+Package: org.apache.commons.lang3.concurrent.MultiBackgroundInitializerTest
+     attributs privés sans getter: [initializer, PERIOD_MILLIS = 50, CHILD_INIT = "childInitializer"]
+
+Classe: ThresholdCircuitBreakerTest
+Package: org.apache.commons.lang3.concurrent.ThresholdCircuitBreakerTest
+     attributs privés sans getter: [zeroThreshold = 0L, threshold = 10L]
+
+Classe: TimedSemaphoreTest
+Package: org.apache.commons.lang3.concurrent.TimedSemaphoreTest
+     attributs privés sans getter: [LIMIT = 10, UNIT = TimeUnit.MILLISECONDS, DURATION = Duration.ofMillis(PERIOD_MILLIS), PERIOD_MILLIS = 500]
+
+Classe: UncheckedExecutionExceptionTest
+Package: org.apache.commons.lang3.concurrent.UncheckedExecutionExceptionTest
+     attributs privés sans getter: []
+
+Classe: UncheckedFutureTest
+Package: org.apache.commons.lang3.concurrent.UncheckedFutureTest
+     attributs privés sans getter: []
+
+Classe: UncheckedTimeoutExceptionTest
+Package: org.apache.commons.lang3.concurrent.UncheckedTimeoutExceptionTest
+     attributs privés sans getter: []
+
+Classe: ConversionTest
+Package: org.apache.commons.lang3.ConversionTest
+     attributs privés sans getter: []
+
+Classe: DoubleRangeTest
+Package: org.apache.commons.lang3.DoubleRangeTest
+     attributs privés sans getter: [rangeFull, range3, range2, range1]
+
+Classe: EnumUtilsTest
+Package: org.apache.commons.lang3.EnumUtilsTest
+     attributs privés sans getter: []
+
+Classe: EventListenerSupportTest
+Package: org.apache.commons.lang3.event.EventListenerSupportTest
+     attributs privés sans getter: []
+
+Classe: EventUtilsTest
+Package: org.apache.commons.lang3.event.EventUtilsTest
+     attributs privés sans getter: []
+
+Classe: AbstractExceptionContextTest
+Package: org.apache.commons.lang3.exception.AbstractExceptionContextTest
+     attributs privés sans getter: [exceptionContext, TEST_MESSAGE = "Test Message", TEST_MESSAGE_2 = "This is monotonous"]
+
+Classe: AbstractExceptionTest
+Package: org.apache.commons.lang3.exception.AbstractExceptionTest
+     attributs privés sans getter: [WRONG_CAUSE_MESSAGE = "Wrong cause message", WRONG_EXCEPTION_MESSAGE = "Wrong exception message", EXCEPTION_MESSAGE = "Exception message", CAUSE_MESSAGE = "Cause message"]
+
+Classe: CloneFailedExceptionTest
+Package: org.apache.commons.lang3.exception.CloneFailedExceptionTest
+     attributs privés sans getter: []
+
+Classe: ContextedExceptionTest
+Package: org.apache.commons.lang3.exception.ContextedExceptionTest
+     attributs privés sans getter: []
+
+Classe: ContextedRuntimeExceptionTest
+Package: org.apache.commons.lang3.exception.ContextedRuntimeExceptionTest
+     attributs privés sans getter: []
+
+Classe: CustomCheckedException
+Package: org.apache.commons.lang3.exception.CustomCheckedException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: CustomUncheckedException
+Package: org.apache.commons.lang3.exception.CustomUncheckedException
+     attributs privés sans getter: [serialVersionUID = 1L]
+
+Classe: DefaultExceptionContextTest
+Package: org.apache.commons.lang3.exception.DefaultExceptionContextTest
+     attributs privés sans getter: []
+
+Classe: ExceptionUtilsTest
+Package: org.apache.commons.lang3.exception.ExceptionUtilsTest
+     attributs privés sans getter: [withoutCause, withCause, notVisibleException, nested, jdkNoCause, cyclicCause]
+
+Classe: UncheckedExceptionTest
+Package: org.apache.commons.lang3.exception.UncheckedExceptionTest
+     attributs privés sans getter: []
+
+Classe: UncheckedIllegalAccessExceptionTest
+Package: org.apache.commons.lang3.exception.UncheckedIllegalAccessExceptionTest
+     attributs privés sans getter: []
+
+Classe: UncheckedInterruptedExceptionTest
+Package: org.apache.commons.lang3.exception.UncheckedInterruptedExceptionTest
+     attributs privés sans getter: []
+
+Classe: UncheckedReflectiveOperationExceptionTest
+Package: org.apache.commons.lang3.exception.UncheckedReflectiveOperationExceptionTest
+     attributs privés sans getter: []
+
+Classe: BooleanConsumerTest
+Package: org.apache.commons.lang3.function.BooleanConsumerTest
+     attributs privés sans getter: []
+
+Classe: ConsumersTest
+Package: org.apache.commons.lang3.function.ConsumersTest
+     attributs privés sans getter: []
+
+Classe: FailableFunctionsTest
+Package: org.apache.commons.lang3.function.FailableFunctionsTest
+     attributs privés sans getter: [ILLEGAL_STATE_EXCEPTION = new IllegalStateException(), ERROR = new OutOfMemoryError()]
+
+Classe: FailableSupplierTest
+Package: org.apache.commons.lang3.function.FailableSupplierTest
+     attributs privés sans getter: []
+
+Classe: FunctionsTest
+Package: org.apache.commons.lang3.function.FunctionsTest
+     attributs privés sans getter: []
+
+Classe: IntToCharFunctionTest
+Package: org.apache.commons.lang3.function.IntToCharFunctionTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersBiConsumerTest
+Package: org.apache.commons.lang3.function.MethodInvokersBiConsumerTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersBiFunctionTest
+Package: org.apache.commons.lang3.function.MethodInvokersBiFunctionTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersFailableBiConsumerTest
+Package: org.apache.commons.lang3.function.MethodInvokersFailableBiConsumerTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersFailableBiFunctionTest
+Package: org.apache.commons.lang3.function.MethodInvokersFailableBiFunctionTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersFailableFunctionTest
+Package: org.apache.commons.lang3.function.MethodInvokersFailableFunctionTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersFailableSupplierTest
+Package: org.apache.commons.lang3.function.MethodInvokersFailableSupplierTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersFunctionTest
+Package: org.apache.commons.lang3.function.MethodInvokersFunctionTest
+     attributs privés sans getter: []
+
+Classe: MethodInvokersSupplierTest
+Package: org.apache.commons.lang3.function.MethodInvokersSupplierTest
+     attributs privés sans getter: []
+
+Classe: Objects
+Package: org.apache.commons.lang3.function.Objects
+     attributs privés sans getter: []
+
+Classe: ObjectsTest
+Package: org.apache.commons.lang3.function.ObjectsTest
+     attributs privés sans getter: []
+
+Classe: SuppliersTest
+Package: org.apache.commons.lang3.function.SuppliersTest
+     attributs privés sans getter: []
+
+Classe: ToBooleanBiFunctionTest
+Package: org.apache.commons.lang3.function.ToBooleanBiFunctionTest
+     attributs privés sans getter: []
+
+Classe: TriConsumerTest
+Package: org.apache.commons.lang3.function.TriConsumerTest
+     attributs privés sans getter: []
+
+Classe: TriFunctionTest
+Package: org.apache.commons.lang3.function.TriFunctionTest
+     attributs privés sans getter: []
+
+Classe: FunctionsTest
+Package: org.apache.commons.lang3.FunctionsTest
+     attributs privés sans getter: []
+
+Classe: HashSetvBitSetTest
+Package: org.apache.commons.lang3.HashSetvBitSetTest
+     attributs privés sans getter: [numberOfElementsToCompute = 10]
+
+Classe: IntegerRangeTest
+Package: org.apache.commons.lang3.IntegerRangeTest
+     attributs privés sans getter: [rangeFull, range3, range2, range1]
+
+Classe: JavaVersionTest
+Package: org.apache.commons.lang3.JavaVersionTest
+     attributs privés sans getter: []
+
+Classe: LocaleUtilsTest
+Package: org.apache.commons.lang3.LocaleUtilsTest
+     attributs privés sans getter: [LOCALE_QQ_ZZ = new Locale("qq", "ZZ"), LOCALE_QQ = new Locale("qq", ""), LOCALE_FR_CA = new Locale("fr", "CA"), LOCALE_FR = new Locale("fr", ""), LOCALE_EN_US_ZZZZ = new Locale("en", "US", "ZZZZ"), LOCALE_EN_US = new Locale("en", "US"), LOCALE_EN = new Locale("en", "")]
+
+Classe: LongRangeTest
+Package: org.apache.commons.lang3.LongRangeTest
+     attributs privés sans getter: [rangeFull, range3, range2, range1]
+
+Classe: FractionTest
+Package: org.apache.commons.lang3.math.FractionTest
+     attributs privés sans getter: [SKIP = 500]
+
+Classe: IEEE754rUtilsTest
+Package: org.apache.commons.lang3.math.IEEE754rUtilsTest
+     attributs privés sans getter: []
+
+Classe: NumberUtilsTest
+Package: org.apache.commons.lang3.math.NumberUtilsTest
+     attributs privés sans getter: []
+
+Classe: MutableBooleanTest
+Package: org.apache.commons.lang3.mutable.MutableBooleanTest
+     attributs privés sans getter: []
+
+Classe: MutableByteTest
+Package: org.apache.commons.lang3.mutable.MutableByteTest
+     attributs privés sans getter: []
+
+Classe: MutableDoubleTest
+Package: org.apache.commons.lang3.mutable.MutableDoubleTest
+     attributs privés sans getter: []
+
+Classe: MutableFloatTest
+Package: org.apache.commons.lang3.mutable.MutableFloatTest
+     attributs privés sans getter: []
+
+Classe: MutableIntTest
+Package: org.apache.commons.lang3.mutable.MutableIntTest
+     attributs privés sans getter: []
+
+Classe: MutableLongTest
+Package: org.apache.commons.lang3.mutable.MutableLongTest
+     attributs privés sans getter: []
+
+Classe: MutableObjectTest
+Package: org.apache.commons.lang3.mutable.MutableObjectTest
+     attributs privés sans getter: []
+
+Classe: MutableShortTest
+Package: org.apache.commons.lang3.mutable.MutableShortTest
+     attributs privés sans getter: []
+
+Classe: PrintAtomicVsMutable
+Package: org.apache.commons.lang3.mutable.PrintAtomicVsMutable
+     attributs privés sans getter: []
+
+Classe: NotImplementedExceptionTest
+Package: org.apache.commons.lang3.NotImplementedExceptionTest
+     attributs privés sans getter: []
+
+Classe: ObjectToStringRuntimeException
+Package: org.apache.commons.lang3.ObjectToStringRuntimeException
+     attributs privés sans getter: [message]
+
+Classe: ObjectUtilsTest
+Package: org.apache.commons.lang3.ObjectUtilsTest
+     attributs privés sans getter: [NON_EMPTY_MAP = new HashMap<>(), NON_EMPTY_SET = new HashSet<>(NON_EMPTY_LIST), NON_EMPTY_LIST = Arrays.asList(NON_EMPTY_ARRAY), NON_EMPTY_ARRAY = { FOO, BAR }, BAR = "bar", FOO = "foo", NULL_SUPPLIER = null]
+
+Classe: RandomStringUtilsTest
+Package: org.apache.commons.lang3.RandomStringUtilsTest
+     attributs privés sans getter: [LOOP_COUNT = 1_000]
+
+Classe: RandomUtilsTest
+Package: org.apache.commons.lang3.RandomUtilsTest
+     attributs privés sans getter: [DELTA = 1e-5]
+
+Classe: RangeTest
+Package: org.apache.commons.lang3.RangeTest
+     attributs privés sans getter: [longRange, intRange, floatRange, doubleRange, byteRange3, byteRange2, byteRange]
+
+Classe: ConstructorUtilsTest
+Package: org.apache.commons.lang3.reflect.ConstructorUtilsTest
+     attributs privés sans getter: [classCache]
+
+Classe: FieldUtilsTest
+Package: org.apache.commons.lang3.reflect.FieldUtilsTest
+     attributs privés sans getter: [parentClass = PublicChild.class.getSuperclass(), privatelyShadowedChild, publiclyShadowedChild, publicChild, D1 = Double.valueOf(1.0), D0 = Double.valueOf(0.0), I1 = Integer.valueOf(1), I0 = Integer.valueOf(0), JACOCO_DATA_FIELD_NAME = "$jacocoData"]
+
+Classe: InheritanceUtilsTest
+Package: org.apache.commons.lang3.reflect.InheritanceUtilsTest
+     attributs privés sans getter: []
+
+Classe: Lang1703Test
+Package: org.apache.commons.lang3.reflect.Lang1703Test
+     attributs privés sans getter: []
+
+Classe: MethodUtilsTest
+Package: org.apache.commons.lang3.reflect.MethodUtilsTest
+     attributs privés sans getter: [classCache = new HashMap<>(), testBean]
+
+Classe: Ambig
+Package: org.apache.commons.lang3.reflect.testbed.Ambig
+     attributs privés sans getter: []
+
+Classe: AnotherChild
+Package: org.apache.commons.lang3.reflect.testbed.AnotherChild
+     attributs privés sans getter: []
+
+Classe: AnotherParent
+Package: org.apache.commons.lang3.reflect.testbed.AnotherParent
+     attributs privés sans getter: []
+
+Classe: Bar
+Package: org.apache.commons.lang3.reflect.testbed.Bar
+     attributs privés sans getter: [VALUE = "bar"]
+
+Classe: Foo
+Package: org.apache.commons.lang3.reflect.testbed.Foo
+     attributs privés sans getter: [VALUE = "foo"]
+
+Classe: GenericConsumer
+Package: org.apache.commons.lang3.reflect.testbed.GenericConsumer
+     attributs privés sans getter: []
+
+Classe: GenericParent
+Package: org.apache.commons.lang3.reflect.testbed.GenericParent
+     attributs privés sans getter: []
+
+Classe: GenericTypeHolder
+Package: org.apache.commons.lang3.reflect.testbed.GenericTypeHolder
+     attributs privés sans getter: []
+
+Classe: Grandchild
+Package: org.apache.commons.lang3.reflect.testbed.Grandchild
+     attributs privés sans getter: []
+
+Classe: PrivatelyShadowedChild
+Package: org.apache.commons.lang3.reflect.testbed.PrivatelyShadowedChild
+     attributs privés sans getter: [d = 1.0, i = 1, b = true, s = "ss"]
+
+Classe: PublicChild
+Package: org.apache.commons.lang3.reflect.testbed.PublicChild
+     attributs privés sans getter: [VALUE = "child"]
+
+Classe: PubliclyShadowedChild
+Package: org.apache.commons.lang3.reflect.testbed.PubliclyShadowedChild
+     attributs privés sans getter: []
+
+Classe: StaticContainer
+Package: org.apache.commons.lang3.reflect.testbed.StaticContainer
+     attributs privés sans getter: [mutablePrivate, mutablePackage, mutableProtected, IMMUTABLE_PRIVATE_2 = "private", IMMUTABLE_PRIVATE = "private", IMMUTABLE_PACKAGE = "", IMMUTABLE_PROTECTED = "protected"]
+
+Classe: StaticContainerChild
+Package: org.apache.commons.lang3.reflect.testbed.StaticContainerChild
+     attributs privés sans getter: []
+
+Classe: StringParameterizedChild
+Package: org.apache.commons.lang3.reflect.testbed.StringParameterizedChild
+     attributs privés sans getter: []
+
+Classe: TypeLiteralTest
+Package: org.apache.commons.lang3.reflect.TypeLiteralTest
+     attributs privés sans getter: []
+
+Classe: TypeUtilsTest
+Package: org.apache.commons.lang3.reflect.TypeUtilsTest
+     attributs privés sans getter: []
+
+Classe: RegExUtilsTest
+Package: org.apache.commons.lang3.RegExUtilsTest
+     attributs privés sans getter: []
+
+Classe: RuntimeEnvironmentTest
+Package: org.apache.commons.lang3.RuntimeEnvironmentTest
+     attributs privés sans getter: []
+
+Classe: SerializationUtilsTest
+Package: org.apache.commons.lang3.SerializationUtilsTest
+     attributs privés sans getter: [iMap, iInteger, iString, SERIALIZE_IO_EXCEPTION_MESSAGE = "Anonymous OutputStream I/O exception", CLASS_NOT_FOUND_MESSAGE = "ClassNotFoundSerialization.readObject fake exception"]
+
+Classe: FailableStreamTest
+Package: org.apache.commons.lang3.stream.FailableStreamTest
+     attributs privés sans getter: []
+
+Classe: IntStreamsTest
+Package: org.apache.commons.lang3.stream.IntStreamsTest
+     attributs privés sans getter: []
+
+Classe: LangCollectorsTest
+Package: org.apache.commons.lang3.stream.LangCollectorsTest
+     attributs privés sans getter: [JOINING_4_NUL = LangCollectors.joining("-", "<", ">", o -> Objects.toString(o, "NUL")), JOINING_4 = LangCollectors.joining("-", "<", ">", TO_STRING), JOINING_3 = LangCollectors.joining("-", "<", ">"), JOINING_1 = LangCollectors.joining("-"), JOINING_0 = LangCollectors.joining(), TO_STRING = Objects::toString, _3L = Long.valueOf(3), _2L = Long.valueOf(2), _1L = Long.valueOf(1)]
+
+Classe: StreamsTest
+Package: org.apache.commons.lang3.stream.StreamsTest
+     attributs privés sans getter: []
+
+Classe: StreamsTest
+Package: org.apache.commons.lang3.StreamsTest
+     attributs privés sans getter: []
+
+Classe: StringEscapeUtilsTest
+Package: org.apache.commons.lang3.StringEscapeUtilsTest
+     attributs privés sans getter: [HTML_ESCAPES = { { "no escaping", "plain text", "plain text" }, { "no escaping", "plain text", "plain text" }, { "empty string", "", "" }, { "null", null, null }, { "ampersand", "bread &amp; butter", "bread & butter" }, { "quotes", "&quot;bread&quot; &amp; butter", "\"bread\" & butter" }, { "final character only", "greater than &gt;", "greater than >" }, { "first character only", "&lt; less than", "< less than" }, { "apostrophe", "Huntington's chorea", "Huntington's chorea" }, { "languages", "English,Fran&ccedil;ais,\u65E5\u672C\u8A9E (nihongo)", "English,Fran\u00E7ais,\u65E5\u672C\u8A9E (nihongo)" }, { "8-bit ascii shouldn't number-escape", "\u0080\u009F", "\u0080\u009F" } }, FOO = "foo"]
+
+Classe: StringsTest
+Package: org.apache.commons.lang3.StringsTest
+     attributs privés sans getter: []
+
+Classe: StringUtilsContainsTest
+Package: org.apache.commons.lang3.StringUtilsContainsTest
+     attributs privés sans getter: []
+
+Classe: StringUtilsEmptyBlankTest
+Package: org.apache.commons.lang3.StringUtilsEmptyBlankTest
+     attributs privés sans getter: []
+
+Classe: StringUtilsEqualsIndexOfTest
+Package: org.apache.commons.lang3.StringUtilsEqualsIndexOfTest
+     attributs privés sans getter: [FOOBAR_SUB_ARRAY = { "ob", "ba" }, FOOBAR = "foobar", FOO = "foo", BAR = "bar"]
+
+Classe: StringUtilsIsMixedCaseTest
+Package: org.apache.commons.lang3.StringUtilsIsMixedCaseTest
+     attributs privés sans getter: []
+
+Classe: StringUtilsIsTest
+Package: org.apache.commons.lang3.StringUtilsIsTest
+     attributs privés sans getter: []
+
+Classe: StringUtilsStartsEndsWithTest
+Package: org.apache.commons.lang3.StringUtilsStartsEndsWithTest
+     attributs privés sans getter: [FOOBAR = "FOOBAR", BAR = "BAR", FOO = "FOO", foobar = "foobar", bar = "bar", foo = "foo"]
+
+Classe: StringUtilsSubstringTest
+Package: org.apache.commons.lang3.StringUtilsSubstringTest
+     attributs privés sans getter: [SENTENCE = "foo bar baz", FOOBAR = "foobar", BAZ = "baz", BAR = "bar", FOO = "foo"]
+
+Classe: StringUtilsTest
+Package: org.apache.commons.lang3.StringUtilsTest
+     attributs privés sans getter: [ARRAY_FALSE_TRUE_FALSE = { false, true, false }, ARRAY_FALSE_TRUE = { false, true }, ARRAY_FALSE_FALSE = { false, false }, EMPTY = {}, SENTENCE_CAP = "Foo Bar Baz", SENTENCE_UNCAP = "foo bar baz", FOO_CAP = "Foo", FOO_UNCAP = "foo", TEXT_LIST_NOSEP = "foobarbaz", TEXT_LIST_CHAR = "foo;bar;baz", TEXT_LIST = "foo,bar,baz", COMMA_SEPARATOR_CHAR = ',', SEPARATOR_CHAR = ';', SEPARATOR = ",", NULL_STRING_LIST = Collections.singletonList(null), EMPTY_STRING_LIST = Collections.emptyList(), STRING_LIST = Arrays.asList("foo", "bar", "baz"), MIXED_TYPE_OBJECT_LIST = Arrays.<Object>asList("foo", Long.valueOf(2L)), MIXED_STRING_LIST = Arrays.asList(null, "", "foo"), DOUBLE_PRIM_LIST = { 1, 2 }, FLOAT_PRIM_LIST = { 1, 2 }, CHAR_PRIM_LIST = { '1', '2' }, SHORT_PRIM_LIST = { 1, 2 }, BYTE_PRIM_LIST = { 1, 2 }, INT_PRIM_LIST = { 1, 2 }, LONG_PRIM_LIST = { 1, 2 }, MIXED_TYPE_LIST = { "foo", Long.valueOf(2L) }, MIXED_ARRAY_LIST = { null, "", "foo" }, NULL_TO_STRING_LIST = { new Object() {
+
+    @Override
+    public String toString() {
+        return null;
+    }
+} }, NULL_ARRAY_LIST = { null }, EMPTY_ARRAY_LIST = {}, ARRAY_LIST = { "foo", "bar", "baz" }, NON_TRIMMABLE, TRIMMABLE, HARD_SPACE, NON_WHITESPACE, WHITESPACE]
+
+Classe: StringUtilsTrimStripTest
+Package: org.apache.commons.lang3.StringUtilsTrimStripTest
+     attributs privés sans getter: [FOO = "foo"]
+
+Classe: StringUtilsValueOfTest
+Package: org.apache.commons.lang3.StringUtilsValueOfTest
+     attributs privés sans getter: []
+
+Classe: Supplementary
+Package: org.apache.commons.lang3.Supplementary
+     attributs privés sans getter: [CharUSuppCharLow = "\uD840", CharUSuppCharHigh = "\uDC00", CharU20001 = "\uD840\uDC01", CharU20000 = "\uD840\uDC00"]
+
+Classe: SystemPropertiesTest
+Package: org.apache.commons.lang3.SystemPropertiesTest
+     attributs privés sans getter: []
+
+Classe: SystemUtilsTest
+Package: org.apache.commons.lang3.SystemUtilsTest
+     attributs privés sans getter: []
+
+Classe: NotVisibleExceptionFactory
+Package: org.apache.commons.lang3.test.NotVisibleExceptionFactory
+     attributs privés sans getter: []
+
+Classe: CompositeFormatTest
+Package: org.apache.commons.lang3.text.CompositeFormatTest
+     attributs privés sans getter: []
+
+Classe: ExtendedMessageFormatTest
+Package: org.apache.commons.lang3.text.ExtendedMessageFormatTest
+     attributs privés sans getter: [registry = new HashMap<>()]
+
+Classe: FormattableUtilsTest
+Package: org.apache.commons.lang3.text.FormattableUtilsTest
+     attributs privés sans getter: []
+
+Classe: StrBuilderAppendInsertTest
+Package: org.apache.commons.lang3.text.StrBuilderAppendInsertTest
+     attributs privés sans getter: [FOO = new Object() {
+
+    @Override
+    public String toString() {
+        return "foo";
+    }
+}, SEP = System.lineSeparator()]
+
+Classe: StrBuilderTest
+Package: org.apache.commons.lang3.text.StrBuilderTest
+     attributs privés sans getter: [A_NUMBER_MATCHER = new StrMatcher() {
+
+    @Override
+    public int isMatch(final char buffer, int pos, final int bufferStart, final int bufferEnd) {
+        if (bufferpos == 'A') {
+            pos++;
+            if (pos < bufferEnd && bufferpos >= '0' && bufferpos <= '9') {
+                return 2;
+            }
+        }
+        return 0;
+    }
+}]
+
+Classe: StrLookupTest
+Package: org.apache.commons.lang3.text.StrLookupTest
+     attributs privés sans getter: []
+
+Classe: StrMatcherTest
+Package: org.apache.commons.lang3.text.StrMatcherTest
+     attributs privés sans getter: [BUFFER2 = "abcdef".toCharArray(), BUFFER1 = "0,1\t2 3\n\r\f\u0000'\"".toCharArray()]
+
+Classe: StrSubstitutorTest
+Package: org.apache.commons.lang3.text.StrSubstitutorTest
+     attributs privés sans getter: [values]
+
+Classe: StrTokenizerTest
+Package: org.apache.commons.lang3.text.StrTokenizerTest
+     attributs privés sans getter: [TSV_SIMPLE_FIXTURE = "A\tb\tc", CSV_SIMPLE_FIXTURE = "A,b,c"]
+
+Classe: EntityArraysTest
+Package: org.apache.commons.lang3.text.translate.EntityArraysTest
+     attributs privés sans getter: []
+
+Classe: LookupTranslatorTest
+Package: org.apache.commons.lang3.text.translate.LookupTranslatorTest
+     attributs privés sans getter: []
+
+Classe: NumericEntityEscaperTest
+Package: org.apache.commons.lang3.text.translate.NumericEntityEscaperTest
+     attributs privés sans getter: []
+
+Classe: NumericEntityUnescaperTest
+Package: org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest
+     attributs privés sans getter: []
+
+Classe: OctalUnescaperTest
+Package: org.apache.commons.lang3.text.translate.OctalUnescaperTest
+     attributs privés sans getter: []
+
+Classe: UnicodeEscaperTest
+Package: org.apache.commons.lang3.text.translate.UnicodeEscaperTest
+     attributs privés sans getter: []
+
+Classe: UnicodeUnescaperTest
+Package: org.apache.commons.lang3.text.translate.UnicodeUnescaperTest
+     attributs privés sans getter: []
+
+Classe: UnicodeUnpairedSurrogateRemoverTest
+Package: org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemoverTest
+     attributs privés sans getter: [writer = new CharArrayWriter(), subject = new UnicodeUnpairedSurrogateRemover()]
+
+Classe: WordUtilsTest
+Package: org.apache.commons.lang3.text.WordUtilsTest
+     attributs privés sans getter: []
+
+Classe: ThreadUtilsTest
+Package: org.apache.commons.lang3.ThreadUtilsTest
+     attributs privés sans getter: []
+
+Classe: CalendarUtilsTest
+Package: org.apache.commons.lang3.time.CalendarUtilsTest
+     attributs privés sans getter: []
+
+Classe: DateFormatUtilsTest
+Package: org.apache.commons.lang3.time.DateFormatUtilsTest
+     attributs privés sans getter: []
+
+Classe: DateUtilsFragmentTest
+Package: org.apache.commons.lang3.time.DateUtilsFragmentTest
+     attributs privés sans getter: [aCalendar, aDate, millis = 991, seconds = 47, minutes = 53, hours = 19, days = 23, months = 7]
+
+Classe: DateUtilsRoundingTest
+Package: org.apache.commons.lang3.time.DateUtilsRoundingTest
+     attributs privés sans getter: [fdf = DateFormatUtils.ISO_DATETIME_FORMAT, januaryOneCalendar, targetMilliSecondDate, targetSecondDate, targetMinuteDate, targetHourOfDayDate, targetHourDate, targetDateDate, targetDayOfMonthDate, targetAmDate, targetPmDate, targetYearDate, januaryOneDate, dateTimeParser]
+
+Classe: DateUtilsTest
+Package: org.apache.commons.lang3.time.DateUtilsTest
+     attributs privés sans getter: [zone, cal8, cal7, cal6, cal5, cal4, cal3, cal2, cal1, calAmPm4, calAmPm3, calAmPm2, calAmPm1, date8, date7, date6, date5, date4, date3, date2, date1, date0, dateAmPm4, dateAmPm3, dateAmPm2, dateAmPm1, dateTimeParser, dateParser, DEFAULT_ZONE, BASE_DATE]
+
+Classe: DurationFormatUtilsTest
+Package: org.apache.commons.lang3.time.DurationFormatUtilsTest
+     attributs privés sans getter: [FOUR_YEARS = 365 * 3 + 366]
+
+Classe: DurationUtilsTest
+Package: org.apache.commons.lang3.time.DurationUtilsTest
+     attributs privés sans getter: []
+
+Classe: FastDateFormatTest
+Package: org.apache.commons.lang3.time.FastDateFormatTest
+     attributs privés sans getter: [HUNGARIAN = Locale.forLanguageTag("hu"), FINNISH = Locale.forLanguageTag("fi"), NROUNDS = 10000, NTHREADS = 10, ISO_8601_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZ"]
+
+Classe: FastDateFormat_PrinterTest
+Package: org.apache.commons.lang3.time.FastDateFormat_PrinterTest
+     attributs privés sans getter: []
+
+Classe: FastDateParserSDFTest
+Package: org.apache.commons.lang3.time.FastDateParserSDFTest
+     attributs privés sans getter: [timeZone = TimeZone.getDefault()]
+
+Classe: FastDateParserTest
+Package: org.apache.commons.lang3.time.FastDateParserTest
+     attributs privés sans getter: [dateParserProvider = (format, timeZone, locale) -> new FastDateParser(format, timeZone, locale, null), SWEDEN = new Locale("sv", "SE"), INDIA = TimeZone.getTimeZone("Asia/Calcutta"), NEW_YORK = TimeZone.getTimeZone("America/New_York"), REYKJAVIK = TimeZone.getTimeZone("Atlantic/Reykjavik"), MDY_SLASH = "MM/DD/yyyy", MDY_DASH = "MM-DD-yyyy", YMD_SLASH = "yyyy/MM/dd", DMY_DOT = "dd.MM.yyyy", yMdHmsSZ = "yyyy-MM-dd'T'HH:mm:ss.SSS Z", LONG_FORMAT = "GGGG/" + LONG_FORMAT_NOERA, SHORT_FORMAT = "G/" + SHORT_FORMAT_NOERA, LONG_FORMAT_NOERA = "yyyy/MMMM/dddd/hhhh/mmmm/ss/aaaa/EEEE", SHORT_FORMAT_NOERA = "y/M/d/h/a/m/s/E", DATE_PARSER_PARAMETERS = "dateParserParameters"]
+
+Classe: FastDateParser_MoreOrLessTest
+Package: org.apache.commons.lang3.time.FastDateParser_MoreOrLessTest
+     attributs privés sans getter: [NEW_YORK = TimeZone.getTimeZone("America/New_York")]
+
+Classe: FastDateParser_TimeZoneStrategyTest
+Package: org.apache.commons.lang3.time.FastDateParser_TimeZoneStrategyTest
+     attributs privés sans getter: [Java17Failures = new ArrayList<>(), Java11Failures = new ArrayList<>()]
+
+Classe: FastDatePrinterTest
+Package: org.apache.commons.lang3.time.FastDatePrinterTest
+     attributs privés sans getter: [SWEDEN = new Locale("sv", "SE"), INDIA = TimeZone.getTimeZone("Asia/Calcutta"), NEW_YORK = TimeZone.getTimeZone("America/New_York"), YYYY_MM_DD = "yyyy/MM/dd"]
+
+Classe: FastDatePrinterTimeZonesTest
+Package: org.apache.commons.lang3.time.FastDatePrinterTimeZonesTest
+     attributs privés sans getter: [PATTERN = "h:mma z"]
+
+Classe: FastTimeZoneTest
+Package: org.apache.commons.lang3.time.FastTimeZoneTest
+     attributs privés sans getter: [MINUTES_5 = 5 * 60 * 1000, MINUTES_59 = 59 * 60 * 1000, HOURS_2 = 2 * 60 * 60 * 1000, HOURS_23 = 23 * 60 * 60 * 1000]
+
+Classe: GmtTimeZoneTest
+Package: org.apache.commons.lang3.time.GmtTimeZoneTest
+     attributs privés sans getter: []
+
+Classe: Java15BugFastDateParserTest
+Package: org.apache.commons.lang3.time.Java15BugFastDateParserTest
+     attributs privés sans getter: [DATE_PARSER_PARAMETERS = "org.apache.commons.lang3.time.FastDateParserTest#dateParserParameters()"]
+
+Classe: StopWatchTest
+Package: org.apache.commons.lang3.time.StopWatchTest
+     attributs privés sans getter: [ZERO_TIME_ELAPSED = "00:00:00.000", ZERO_HOURS_PREFIX = "00:", MESSAGE = "Baking cookies", MIN_DURATION = Duration.ofMillis(20), SPLIT_CLOCK_STR_LEN = 12]
+
+Classe: TimeZonesTest
+Package: org.apache.commons.lang3.time.TimeZonesTest
+     attributs privés sans getter: [TIME_ZONE_GET_AVAILABLE_IDS = "java.util.TimeZone#getAvailableIDs()"]
+
+Classe: WeekYearTest
+Package: org.apache.commons.lang3.time.WeekYearTest
+     attributs privés sans getter: []
+
+Classe: ImmutablePairTest
+Package: org.apache.commons.lang3.tuple.ImmutablePairTest
+     attributs privés sans getter: []
+
+Classe: ImmutableTripleTest
+Package: org.apache.commons.lang3.tuple.ImmutableTripleTest
+     attributs privés sans getter: []
+
+Classe: MutablePairTest
+Package: org.apache.commons.lang3.tuple.MutablePairTest
+     attributs privés sans getter: []
+
+Classe: MutableTripleTest
+Package: org.apache.commons.lang3.tuple.MutableTripleTest
+     attributs privés sans getter: []
+
+Classe: PairTest
+Package: org.apache.commons.lang3.tuple.PairTest
+     attributs privés sans getter: []
+
+Classe: TripleTest
+Package: org.apache.commons.lang3.tuple.TripleTest
+     attributs privés sans getter: []
+
+Classe: FluentBitSetTest
+Package: org.apache.commons.lang3.util.FluentBitSetTest
+     attributs privés sans getter: [eightFbs, eightBs]
+
+Classe: ValidateTest
+Package: org.apache.commons.lang3.ValidateTest
+     attributs privés sans getter: []
+

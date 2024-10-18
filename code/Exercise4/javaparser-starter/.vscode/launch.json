@@ -7,7 +7,7 @@
         {
             "type": "java",
             "name": "Current File",
-            "args": "D:/Documents/Esir/esir_2/semestre_1/vv/tp/VV-ESIR-TP2/code/Exercise4/javaparser-starter/test",
+            "args": "D:/Documents/Esir/esir_2/semestre_1/vv/tp/VV-ESIR-TP2-ErwannPERRIN_AsmaZAIED/code/Exercise4/javaparser-starter/projet/src",
             "request": "launch",
             "mainClass": "${file}"
         },

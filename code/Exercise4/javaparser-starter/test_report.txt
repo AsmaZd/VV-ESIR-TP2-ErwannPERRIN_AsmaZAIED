@@ -1,0 +1,8 @@
+Classe: Person
+Package: fr.istic.vv.Person
+     attributs privés sans getter: [Surname, Age]
+
+Classe: Test
+Package: fr.istic.vv.Test
+     attributs privés sans getter: [att2]
+

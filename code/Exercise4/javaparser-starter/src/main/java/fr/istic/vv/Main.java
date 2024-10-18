@@ -18,6 +18,7 @@ import com.github.javaparser.ast.NodeList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        // System.out.println(args[0]);
         if(args.length == 0) {
             System.err.println("Should provide the path to the source code");
             System.exit(1);

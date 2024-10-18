@@ -46,7 +46,7 @@ public class PublicElementsPrinter extends VoidVisitorWithDefaults<Void> {
         BufferedWriter bw = null;
         try {
 
-       File file = new File("D:/Documents/myfile.txt");
+       File file = new File("D:/Documents/report.txt");
   
         if (!file.exists()) {
            file.createNewFile();
